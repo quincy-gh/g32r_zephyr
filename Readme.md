@@ -47,7 +47,7 @@
 - [ ] sdf
 - [x] serial
 - [ ] spi
-- [ ] timer
+- [x] timer
 - [ ] watchdog
 - [ ] xbar
 

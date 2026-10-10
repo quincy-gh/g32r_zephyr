@@ -1,0 +1,20 @@
+tests:
+  g32r5.counter.tmr:
+    tags:
+      - drivers
+      - counter
+    harness: ztest
+    platform_allow:
+      - g32r501_eval/g32r501dvxt/cpu0
+      - g32r502_eval/g32r502mc
+    timeout: 30
+  g32r5.counter.tmr2_intosc1:
+    tags:
+      - drivers
+      - counter
+    harness: ztest
+    platform_allow:
+      - g32r501_eval/g32r501dvxt/cpu0
+      - g32r502_eval/g32r502mc
+    extra_args: DTC_OVERLAY_FILE="tmr2_intosc1.overlay"
+    timeout: 30

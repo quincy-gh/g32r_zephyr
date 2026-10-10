@@ -1,0 +1,15 @@
+/*
+ * TMR2 from INTOSC1 / 1. TMR0 stays on SYSCLK so the two rates can be
+ * compared in one image. app.overlay is not applied when twister passes
+ * DTC_OVERLAY_FILE, so TMR0 is enabled here as well.
+ */
+
+&tmr0 {
+	status = "okay";
+};
+
+&tmr2 {
+	status = "okay";
+	clocks = <&clk_intosc_1>;
+	clock-prescaler = <1>;
+};

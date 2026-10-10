@@ -1,0 +1,14 @@
+# Copyright (c) 2026, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config COUNTER
+	default y if DT_HAS_GEEHY_G32R5_TMR_ENABLED
+
+config COUNTER_G32R5_TMR
+	bool "G32R5 CPU timer counter driver"
+	default y
+	depends on COUNTER
+	depends on DT_HAS_GEEHY_G32R5_TMR_ENABLED
+	help
+	  Enable the Zephyr counter driver for the G32R5 CPU timers
+	  TMR0, TMR1 and TMR2.
