@@ -137,6 +137,34 @@
 			interrupts = <98 0>;
 			status = "disabled";
 		};
+
+		/*
+		 * CPU timers. Each core image has its own TMR0/1/2 at these
+		 * addresses. TMR0 and TMR1 run from SYSCLK. TMR2 selects its
+		 * clock with clocks and divides it with clock-prescaler.
+		 */
+		tmr0: timer@50110000 {
+			compatible = "geehy,g32r5-tmr";
+			reg = <0x50110000 0x400>;
+			interrupts = <38 0>;
+			status = "disabled";
+		};
+
+		tmr1: timer@50110400 {
+			compatible = "geehy,g32r5-tmr";
+			reg = <0x50110400 0x400>;
+			interrupts = <13 0>;
+			status = "disabled";
+		};
+
+		tmr2: timer@50110800 {
+			compatible = "geehy,g32r5-tmr";
+			reg = <0x50110800 0x400>;
+			interrupts = <14 0>;
+			clocks = <&sysclk>;
+			clock-prescaler = <1>;
+			status = "disabled";
+		};
 	};
 };
 

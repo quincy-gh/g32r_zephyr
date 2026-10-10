@@ -1,0 +1,50 @@
+# Copyright (c) 2026, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  Geehy G32R5 CPU timer.
+
+  The timer is a 32-bit down counter with one overflow interrupt and no
+  compare channel, so the counter alarm and the top callback share that
+  interrupt.
+
+  TMR0 and TMR1 are clocked by SYSCLK. TMR2 selects its input with
+  clocks and divides that input with clock-prescaler. prescaler is the
+  timer's own divider, (TDDR + 1), and applies after the TMR2 mux.
+
+compatible: "geehy,g32r5-tmr"
+
+include: base.yaml
+
+properties:
+  reg:
+    required: true
+
+  interrupts:
+    required: true
+
+  clocks:
+    description: |
+      TMR2 input clock. Allowed phandles are &sysclk, &clk_intosc_1,
+      &clk_intosc_2 and &clk_xtal. Omit it to select SYSCLK.
+      TMR0 and TMR1 have no clock selector; leave this unset there.
+
+  clock-prescaler:
+    type: int
+    enum:
+      - 1
+      - 2
+      - 4
+      - 8
+      - 16
+    description: |
+      TMR2 clock-mux divider. The selected clocks input is divided by
+      this value before it reaches the timer. TMR0 and TMR1 have no
+      such divider; leave this unset there.
+
+  prescaler:
+    type: int
+    default: 1
+    description: |
+      Timer divider applied as (TDDR + 1). The counter decrements once
+      every prescaler clocks of its input. Allowed range is 1 to 65536.

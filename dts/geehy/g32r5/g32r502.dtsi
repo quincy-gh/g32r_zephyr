@@ -154,6 +154,33 @@
 			interrupts = <186 0>;
 			status = "disabled";
 		};
+
+		/*
+		 * CPU timers. TMR0 and TMR1 run from SYSCLK. TMR2 selects its
+		 * clock with clocks and divides it with clock-prescaler.
+		 */
+		tmr0: timer@40017000 {
+			compatible = "geehy,g32r5-tmr";
+			reg = <0x40017000 0x400>;
+			interrupts = <38 0>;
+			status = "disabled";
+		};
+
+		tmr1: timer@40017400 {
+			compatible = "geehy,g32r5-tmr";
+			reg = <0x40017400 0x400>;
+			interrupts = <13 0>;
+			status = "disabled";
+		};
+
+		tmr2: timer@40017800 {
+			compatible = "geehy,g32r5-tmr";
+			reg = <0x40017800 0x400>;
+			interrupts = <14 0>;
+			clocks = <&sysclk>;
+			clock-prescaler = <1>;
+			status = "disabled";
+		};
 	};
 };
 
