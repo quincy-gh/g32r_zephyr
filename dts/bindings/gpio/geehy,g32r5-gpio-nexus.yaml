@@ -1,0 +1,21 @@
+# Copyright (c) 2026, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  G32R5 GPIO nexus. Specifiers use the chip's global GPIO number
+  (GPIO0 is port A bit 0, GPIO32 is port B bit 0, GPIO224 is port H bit 0).
+  The low 5 bits select the bit inside that port.
+
+compatible: "geehy,g32r5-gpio-nexus"
+
+include:
+  - name: gpio-nexus.yaml
+  - name: base.yaml
+
+properties:
+  "#gpio-cells":
+    const: 2
+
+gpio-cells:
+  - pin
+  - flags

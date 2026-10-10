@@ -1,0 +1,44 @@
+# Copyright (c) 2025, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config UART_G32R5
+	bool "G32R5 UART driver"
+	default y
+	depends on DT_HAS_GEEHY_G32R5_UART_ENABLED
+	select SERIAL_HAS_DRIVER
+	select SERIAL_SUPPORT_INTERRUPT
+	help
+	  Enable the G32R5 UART driver
+
+if UART_G32R5
+
+config UART_G32R5_FIFO
+	bool "G32R5 UART 16-level hardware FIFO"
+	help
+	  Enable the TX and RX FIFOs. Poll and interrupt paths then use
+	  FIFO status instead of the single-byte TXRDY and RXRDY flags.
+	  Leave this off to keep the one-byte buffer.
+
+config UART_G32R5_FIFO_RX_THRESHOLD
+	int "RX FIFO interrupt level"
+	depends on UART_G32R5_FIFO
+	range 1 16
+	default 1
+	help
+	  Interrupt when the RX FIFO holds at least this many words.
+	  Level 0 is rejected by the hardware compare: the count is
+	  always greater than or equal to zero, so the interrupt would
+	  stay asserted. 1 interrupts on every received byte.
+
+config UART_G32R5_FIFO_TX_THRESHOLD
+	int "TX FIFO interrupt level"
+	depends on UART_G32R5_FIFO
+	range 0 15
+	default 0
+	help
+	  Interrupt when the TX FIFO holds at most this many words.
+	  0 interrupts once the FIFO is empty. 16 is not useful: the
+	  FIFO never holds more than 16 words, so the interrupt would
+	  stay asserted.
+
+endif

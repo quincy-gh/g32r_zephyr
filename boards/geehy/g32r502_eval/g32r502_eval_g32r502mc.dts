@@ -1,0 +1,10 @@
+/*
+ * Copyright (c) 2026 Quincy.W <wangqyfm@foxmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+#include <geehy/g32r5/g32r502.dtsi>
+#include <geehy/g32r5/g32r502-pinctrl.dtsi>
+#include "g32r502_eval.dtsi"

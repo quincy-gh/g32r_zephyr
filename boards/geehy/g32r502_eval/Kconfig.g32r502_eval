@@ -1,0 +1,5 @@
+# Copyright (c) 2026, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config BOARD_G32R502_EVAL
+	select SOC_G32R502MC

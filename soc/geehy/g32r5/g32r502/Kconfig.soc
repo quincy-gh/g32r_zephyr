@@ -1,0 +1,45 @@
+# Copyright (c) 2026, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES_G32R502
+	bool "G32R502 Series MCU"
+	select ARM
+	select SOC_FAMILY_G32R5
+	select CPU_HAS_FPU
+	select CPU_CORTEX_M52
+	# Integer Helium only. Official MDK target is
+	# -mcpu=cortex-m52+nomve.fp+nofp.dp+cdecp0 (SFPU, MVE integer).
+	select ARMV8_1_M_MVEI
+
+	select SOC_PREP_HOOK
+
+	help
+	  Enable support for Geehy G32R502 MCU series
+
+config SOC_SERIES
+	default "g32r502" if SOC_SERIES_G32R502
+
+config SOC_G32R502MC
+	bool "G32R502MC"
+	select SOC_SERIES_G32R502
+
+config SOC_G32R502KC
+	bool "G32R502KC"
+	select SOC_SERIES_G32R502
+
+config SOC_G32R502CC
+	bool "G32R502CC"
+	select SOC_SERIES_G32R502
+
+config SOC_G32R502RC
+	bool "G32R502RC"
+	select SOC_SERIES_G32R502
+
+config SOC
+	default "g32r502mc" if SOC_G32R502MC
+	default "g32r502kc" if SOC_G32R502KC
+	default "g32r502cc" if SOC_G32R502CC
+	default "g32r502rc" if SOC_G32R502RC
+
+config NUM_IRQS
+	default 227 if SOC_SERIES_G32R502

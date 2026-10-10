@@ -1,0 +1,6 @@
+board:
+  name: g32r501_eval
+  full_name: G32R501 EVAL
+  vendor: geehy
+  socs:
+    - name: g32r501dvxt

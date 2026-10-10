@@ -1,0 +1,121 @@
+# Copyright (c) 2025, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_SERIES_G32R501
+	bool "G32R501 Series MCU"
+	select ARM
+	select SOC_FAMILY_G32R5
+	select CPU_HAS_FPU
+	select CPU_CORTEX_M52
+	select ARMV8_1_M_MVEI
+	select ARMV8_1_M_MVEF
+
+	select SOC_PREP_HOOK
+
+	help
+	  Enable support for Geehy G32R501 MCU series
+
+config SOC_SERIES
+	default "g32r501" if SOC_SERIES_G32R501
+
+config SOC_G32R501DVXT
+	bool "G32R501DVXT"
+	select SOC_SERIES_G32R501
+
+config SOC_G32R501DRXT
+	bool "G32R501DRXT"
+	select SOC_SERIES_G32R501
+
+config SOC_G32R501DMXT
+	bool "G32R501DMXT"
+	select SOC_SERIES_G32R501
+
+# G32R501DPYT7: 80-pin LQFP 10mm x 10mm. Same pinout as DMYT7
+# (80-pin LQFP 12mm x 12mm); only the package body size differs.
+config SOC_G32R501DPXT
+	bool "G32R501DPXT"
+	select SOC_SERIES_G32R501
+
+config SOC_G32R501DNXU
+	bool "G32R501DNXT"
+	select SOC_SERIES_G32R501
+
+config SOC_G32R501VXT
+	bool "G32R501VXT"
+	select SOC_SERIES_G32R501
+
+config SOC_G32R501RXT
+	bool "G32R501RXT"
+	select SOC_SERIES_G32R501
+
+config SOC_G32R501MXT
+	bool "G32R501MXT"
+	select SOC_SERIES_G32R501
+
+config SOC_G32R501NXU
+	bool "G32R501NXT"
+	select SOC_SERIES_G32R501
+
+config SOC
+	default "g32r501dvxt" if SOC_G32R501DVXT
+	default "g32r501drxt" if SOC_G32R501DRXT
+	default "g32r501dmxt" if SOC_G32R501DMXT
+	default "g32r501dpxt" if SOC_G32R501DPXT
+	default "g32r501dnxt" if SOC_G32R501DNXU
+
+config NUM_IRQS
+	default 227
+
+menuconfig XCLKOUT
+	bool "XCLKOUT"
+
+if XCLKOUT
+
+config XCLKOUT_PIN
+	int "XCLKOUT Pin"
+	default 16
+	help
+		16 GPIO16
+		18 GPIO18x2
+
+config XCLKOUT_DIV
+	int "XCLKOUTDIV"
+	range 0 3
+	default 3
+	help
+		Selects the div value
+		0: /1
+		1: /2
+		2: /4
+		3: /8
+
+choice XCLKOUT_SRC
+	prompt "XCLKOUT Source"
+	default XCLKOUT_SRC_INTOSC1
+	help
+		XCLKOUTSEL
+
+	config XCLKOUT_SRC_PLLSYSCLK
+		bool "PLLSYSCLK"
+
+	config XCLKOUT_SRC_PLLRAWCLK
+		bool "PLLRAWCLK"
+
+	config XCLKOUT_SRC_SYSCLK
+		bool "SYSCLK"
+
+	config XCLKOUT_SRC_APBCLK
+		bool "APBCLK"
+
+	config XCLKOUT_SRC_INTOSC1
+		bool "INTOSC1"
+
+	config XCLKOUT_SRC_INTOSC2
+		bool "INTOSC2"
+
+	config XCLKOUT_SRC_XTAL
+		bool "XTAL"
+
+endchoice
+
+endif

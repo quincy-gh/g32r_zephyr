@@ -1,0 +1,37 @@
+family:
+- name: g32r5
+  series:
+  - name: g32r501
+    socs:
+    # Order-code "D" is dual-core (AMP). Each cluster is a separate image.
+    - name: g32r501dvxt
+      cpuclusters:
+      - name: cpu0
+      - name: cpu1
+    - name: g32r501drxt
+      cpuclusters:
+      - name: cpu0
+      - name: cpu1
+    - name: g32r501dmxt
+      cpuclusters:
+      - name: cpu0
+      - name: cpu1
+    - name: g32r501dpxt
+      cpuclusters:
+      - name: cpu0
+      - name: cpu1
+    - name: g32r501dnxu
+      cpuclusters:
+      - name: cpu0
+      - name: cpu1
+    # No "D": single-core. No cpuclusters.
+    - name: g32r501vxt
+    - name: g32r501rxt
+    - name: g32r501mxt
+    - name: g32r501nxu
+  - name: g32r502
+    socs:
+    - name: g32r502mc
+    - name: g32r502kc
+    - name: g32r502cc
+    - name: g32r502rc

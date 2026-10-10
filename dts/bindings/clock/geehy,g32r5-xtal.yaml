@@ -1,0 +1,22 @@
+# Copyright (c) 2025, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+description: G32R5 XTAL Clock
+
+compatible: "geehy,g32r5-xtal"
+
+include: [fixed-clock.yaml]
+
+properties:
+  xtal-osc-mode:
+    type: string
+    default: "Crystal"
+    description: XTAL oscillator mode Configures
+    enum:
+      - "Crystal"
+      - "Single-ended"
+
+  clock-frequency:
+    required: true
+    type: int
+    description: Frequency in Hz of xtal

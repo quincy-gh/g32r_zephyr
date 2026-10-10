@@ -1,0 +1,47 @@
+# Copyright (c) 2025, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  G32R5 Pin Controller
+
+  Based on pincfg-node.yaml binding.
+  Note: `bias-disable`  are default pin configurations.
+
+compatible: "geehy,g32r5-pinctrl"
+
+include: base.yaml
+
+properties:
+  reg:
+    required: true
+
+
+child-binding:
+  description: |
+    Base binding configuration for Geehy G32R5 MCUs
+
+  include:
+    - name: pincfg-node.yaml
+      property-allowlist:
+        - bias-disable
+        - bias-pull-up
+        - drive-push-pull
+        - drive-open-drain
+        - output-low
+        - output-high
+
+  properties:
+    pinmux:
+      required: true
+      type: int
+      description: |
+        Integer array, represents gpio pin number and mux setting.
+        These defines are calculated as: (function<<8 | pin_number<<0)
+        With:
+        - pin_number: The gpio pin number (0..255, including port H 224..245)
+        - function: The function number, can be:
+        * 0 : GPIO
+        * 1 : Alternate Function 1
+        * 2 : Alternate Function 2
+        * 3 : Alternate Function 3
+        * ...

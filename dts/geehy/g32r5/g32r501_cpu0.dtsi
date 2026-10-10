@@ -1,0 +1,40 @@
+/*
+ * Copyright (c) 2025 Quincy.W <wangqyfm@foxmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Dual-core G32R501, CPU0 image.
+ * SDK g32r501dxy_cpu0: ITCM 48 KiB @ 0x0, DTCM 16 KiB @ 0x20000000,
+ * CPU0 flash 320 KiB (half of the 640 KiB high-density device).
+ * Zephyr keeps the port's flash window at 0x08000000.
+ */
+
+#include "g32r501.dtsi"
+
+/delete-node/ &cpu1;
+
+/ {
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,itcm = &itcm;
+	};
+
+	soc {
+		itcm: itcm@0 {
+			compatible = "zephyr,memory-region";
+			reg = <0x00000000 0xC000>;
+			zephyr,memory-region = "ITCM";
+			zephyr,memory-region-flags = "rx";
+			status = "okay";
+		};
+
+		sram0: memory@20000000 {
+			reg = <0x20000000 0x4000>;
+		};
+
+		flash0: flash@8000000 {
+			reg = <0x08000000 0x50000>;
+		};
+	};
+};

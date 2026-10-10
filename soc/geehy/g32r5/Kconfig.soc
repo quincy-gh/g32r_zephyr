@@ -1,0 +1,15 @@
+# Copyright (c) 2025, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+config SOC_FAMILY_G32R5
+	bool
+
+config SOC_FAMILY
+	default "g32r5" if SOC_FAMILY_G32R5
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	int
+	default $(dt_node_int_prop_int,/soc/sysclk@50020800,clock-frequency) if SOC_SERIES_G32R501
+	default $(dt_node_int_prop_int,/soc/sysclk@40013400,clock-frequency) if SOC_SERIES_G32R502
+
+rsource "*/Kconfig.soc"

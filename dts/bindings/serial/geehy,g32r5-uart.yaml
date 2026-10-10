@@ -1,0 +1,23 @@
+# Copyright (c) 2025, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+description: Geehy G32R5 UART controller
+
+compatible: "geehy,g32r5-uart"
+
+include: [uart-controller.yaml, reset-device.yaml, pinctrl-device.yaml]
+
+properties:
+  reg:
+    required: true
+
+  interrupts:
+    required: true
+
+  pinctrl-0:
+    type: phandles
+    description: |
+      Port pin configuration for RX & TX signals. 
+      For example:
+         pinctrl-0 = <&p5_0_uart5_rx &p5_1_uart5_tx>;
+    required: true

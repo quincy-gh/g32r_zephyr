@@ -1,0 +1,63 @@
+/*
+ * Copyright (c) 2025 Quincy.W <wangqyfm@foxmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ */
+
+/ {
+	model = "Geehy G32R501 EVAL";
+	compatible = "geehy,g32r501";
+
+	chosen {
+		zephyr,console = &uarta;
+	};
+
+	leds {
+		compatible = "gpio-leds";
+
+		led1: led1 {
+			gpios = <&gpio 23 GPIO_ACTIVE_LOW>;
+			label = "LD 1";
+		};
+
+		led2: led2 {
+			gpios = <&gpio 34 GPIO_ACTIVE_LOW>;
+			label = "LD 2";
+		};
+	};
+
+	aliases {
+		led0 = &led1;
+		led1 = &led2;
+	};
+};
+
+&clk_intosc_1 {
+	status = "okay";
+};
+
+&pll {
+	imult = <24>;
+	fmult = <0>;
+	odiv = <1>;
+	pllsysclkdiv = <1>;
+	clocks = <&clk_intosc_1>;
+	status = "okay";
+};
+
+&sysclk {
+	status = "okay";
+	clocks = <&pll>;
+	clock-frequency = <DT_FREQ_M(240)>;
+
+	apb-prescaler = <2>;
+	lsp-prescaler = <2>;
+};
+
+&uarta {
+	status = "okay";
+	pinctrl-0 = <&uarta_tx_gpio29 &uarta_rx_gpio28>;
+	pinctrl-names = "default";
+	current-speed = <115200>;
+};

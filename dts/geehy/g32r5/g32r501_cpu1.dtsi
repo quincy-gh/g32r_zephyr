@@ -1,0 +1,40 @@
+/*
+ * Copyright (c) 2025 Quincy.W <wangqyfm@foxmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * Dual-core G32R501, CPU1 image.
+ * ITCM is 8 KiB and follows CPU0 ITCM (0x0 + 48 KiB = 0xC000).
+ * DTCM is 8 KiB and follows CPU0 DTCM (0x20000000 + 16 KiB = 0x20004000).
+ * CPU1 flash follows CPU0's 320 KiB, so it starts at 0x08050000.
+ */
+
+#include "g32r501.dtsi"
+
+/delete-node/ &cpu0;
+
+/ {
+	chosen {
+		zephyr,sram = &sram0;
+		zephyr,flash = &flash0;
+		zephyr,itcm = &itcm;
+	};
+
+	soc {
+		itcm: itcm@c000 {
+			compatible = "zephyr,memory-region";
+			reg = <0x0000C000 0x2000>;
+			zephyr,memory-region = "ITCM";
+			zephyr,memory-region-flags = "rx";
+			status = "okay";
+		};
+
+		sram0: memory@20004000 {
+			reg = <0x20004000 0x2000>;
+		};
+
+		flash0: flash@8050000 {
+			reg = <0x08050000 0x50000>;
+		};
+	};
+};

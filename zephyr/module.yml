@@ -1,0 +1,8 @@
+name: hal_g32r5
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    board_root: .
+    dts_root: .
+    soc_root: .

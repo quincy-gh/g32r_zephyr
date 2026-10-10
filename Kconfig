@@ -1,0 +1,4 @@
+# Kconfig
+
+rsource "sdk/Kconfig"
+rsource "drivers/Kconfig"

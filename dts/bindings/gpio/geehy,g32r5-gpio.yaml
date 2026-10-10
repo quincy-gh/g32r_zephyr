@@ -1,0 +1,25 @@
+# Copyright (c) 2025, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+description: Geehy G32R5 GPIO controller
+
+compatible: "geehy,g32r5-gpio"
+
+include:
+  - name: gpio-controller.yaml
+  - name: base.yaml
+
+properties:
+  reg:
+    required: true
+
+  "#gpio-cells":
+    const: 2
+
+  ngpios:
+    type: int
+    default: 32
+
+gpio-cells:
+  - pin
+  - flags

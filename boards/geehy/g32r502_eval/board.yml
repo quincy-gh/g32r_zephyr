@@ -1,0 +1,6 @@
+board:
+  name: g32r502_eval
+  full_name: G32R502 EVAL
+  vendor: geehy
+  socs:
+    - name: g32r502mc

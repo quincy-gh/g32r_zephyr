@@ -1,0 +1,57 @@
+# Copyright (c) 2025, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+    G32R5 PLL Clock.
+    
+    fPLLSYSCLK = fOSCCLK * (IMULT + FMULT) / (ODIV * PLLSYSCLKDIV)
+
+compatible: "geehy,g32r5-pll-clock"
+
+include: [clock-controller.yaml, base.yaml]
+
+properties:
+  "#clock-cells":
+    const: 0
+
+  clocks:
+    required: true
+
+  imult:
+    type: int
+    required: true
+    description: SYSPLL Integer Multiplier, Range is [1, 128]
+
+  fmult:
+    type: int
+    required: true
+    description: |
+        SYSPLL Fractional Multiplier:
+        - 0: 0
+        - 1: 0.25
+        - 2: 0.5
+        - 3: 0.75
+    enum:
+      - 0
+      - 1
+      - 2
+      - 3
+
+  odiv:
+    type: int
+    required: true
+    description: SYSPLL Output Clock Divider
+    enum:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+
+  pllsysclkdiv:
+    type: int
+    required: true
+    description: SYSCLK Divide Select, Range is [1, 128]

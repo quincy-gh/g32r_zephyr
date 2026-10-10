@@ -1,0 +1,1103 @@
+/*
+ * Copyright (c) 2025 Quincy.W <wangqyfm@foxmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#include <dt-bindings/pinctrl/g32r5-pinctrl.h>
+
+&pinctrl {
+	/omit-if-no-ref/ pwm1_a_gpio0: pwm1_a_gpio0 {
+		pinmux = < G32R5_PINMUX(0, 1) >;
+	};
+	/omit-if-no-ref/ spia_ste_gpio0: spia_ste_gpio0 {
+		pinmux = < G32R5_PINMUX(0, 3) >;
+	};
+	/omit-if-no-ref/ i2ca_sda_gpio0: i2ca_sda_gpio0 {
+		pinmux = < G32R5_PINMUX(0, 6) >;
+	};
+	/omit-if-no-ref/ qspi_io1_gpio0: qspi_io1_gpio0 {
+		pinmux = < G32R5_PINMUX(0, 11) >;
+	};
+	/omit-if-no-ref/ pwm1_b_gpio1: pwm1_b_gpio1 {
+		pinmux = < G32R5_PINMUX(1, 1) >;
+	};
+	/omit-if-no-ref/ spia_somi_gpio1: spia_somi_gpio1 {
+		pinmux = < G32R5_PINMUX(1, 3) >;
+	};
+	/omit-if-no-ref/ i2ca_scl_gpio1: i2ca_scl_gpio1 {
+		pinmux = < G32R5_PINMUX(1, 6) >;
+	};
+	/omit-if-no-ref/ pwm2_a_gpio2: pwm2_a_gpio2 {
+		pinmux = < G32R5_PINMUX(2, 1) >;
+	};
+	/omit-if-no-ref/ cana_tx_gpio2: cana_tx_gpio2 {
+		pinmux = < G32R5_PINMUX(2, 2) >;
+	};
+	/omit-if-no-ref/ spia_simo_gpio2: spia_simo_gpio2 {
+		pinmux = < G32R5_PINMUX(2, 3) >;
+	};
+	/omit-if-no-ref/ outputxbar1_gpio2: outputxbar1_gpio2 {
+		pinmux = < G32R5_PINMUX(2, 5) >;
+	};
+	/omit-if-no-ref/ pmbusa_sda_gpio2: pmbusa_sda_gpio2 {
+		pinmux = < G32R5_PINMUX(2, 6) >;
+	};
+	/omit-if-no-ref/ uarta_tx_gpio2: uarta_tx_gpio2 {
+		pinmux = < G32R5_PINMUX(2, 9) >;
+	};
+	/omit-if-no-ref/ qspi_io3_gpio2: qspi_io3_gpio2 {
+		pinmux = < G32R5_PINMUX(2, 11) >;
+	};
+	/omit-if-no-ref/ pwm2_b_gpio3: pwm2_b_gpio3 {
+		pinmux = < G32R5_PINMUX(3, 1) >;
+	};
+	/omit-if-no-ref/ outputxbar2_gpio3: outputxbar2_gpio3 {
+		pinmux = < G32R5_PINMUX(3, 2) >;
+	};
+	/omit-if-no-ref/ cana_rx_gpio3: cana_rx_gpio3 {
+		pinmux = < G32R5_PINMUX(3, 3) >;
+	};
+	/omit-if-no-ref/ outputxbar2_gpio3_5: outputxbar2_gpio3_5 {
+		pinmux = < G32R5_PINMUX(3, 5) >;
+	};
+	/omit-if-no-ref/ pmbusa_scl_gpio3: pmbusa_scl_gpio3 {
+		pinmux = < G32R5_PINMUX(3, 6) >;
+	};
+	/omit-if-no-ref/ spia_clk_gpio3: spia_clk_gpio3 {
+		pinmux = < G32R5_PINMUX(3, 7) >;
+	};
+	/omit-if-no-ref/ uarta_rx_gpio3: uarta_rx_gpio3 {
+		pinmux = < G32R5_PINMUX(3, 9) >;
+	};
+	/omit-if-no-ref/ qspi_io2_gpio3: qspi_io2_gpio3 {
+		pinmux = < G32R5_PINMUX(3, 11) >;
+	};
+	/omit-if-no-ref/ pwm3_a_gpio4: pwm3_a_gpio4 {
+		pinmux = < G32R5_PINMUX(4, 1) >;
+	};
+	/omit-if-no-ref/ qep2_strobe_gpio4: qep2_strobe_gpio4 {
+		pinmux = < G32R5_PINMUX(4, 2) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio4: spib_clk_gpio4 {
+		pinmux = < G32R5_PINMUX(4, 3) >;
+	};
+	/omit-if-no-ref/ outputxbar3_gpio4: outputxbar3_gpio4 {
+		pinmux = < G32R5_PINMUX(4, 5) >;
+	};
+	/omit-if-no-ref/ cana_tx_gpio4: cana_tx_gpio4 {
+		pinmux = < G32R5_PINMUX(4, 6) >;
+	};
+	/omit-if-no-ref/ qspi_sclk_gpio4: qspi_sclk_gpio4 {
+		pinmux = < G32R5_PINMUX(4, 11) >;
+	};
+	/omit-if-no-ref/ pwm3_b_gpio5: pwm3_b_gpio5 {
+		pinmux = < G32R5_PINMUX(5, 1) >;
+	};
+	/omit-if-no-ref/ outputxbar3_gpio5: outputxbar3_gpio5 {
+		pinmux = < G32R5_PINMUX(5, 3) >;
+	};
+	/omit-if-no-ref/ cana_rx_gpio5: cana_rx_gpio5 {
+		pinmux = < G32R5_PINMUX(5, 6) >;
+	};
+	/omit-if-no-ref/ spia_ste_gpio5: spia_ste_gpio5 {
+		pinmux = < G32R5_PINMUX(5, 7) >;
+	};
+	/omit-if-no-ref/ qspi_io1_gpio5: qspi_io1_gpio5 {
+		pinmux = < G32R5_PINMUX(5, 11) >;
+	};
+	/omit-if-no-ref/ pwm4_a_gpio6: pwm4_a_gpio6 {
+		pinmux = < G32R5_PINMUX(6, 1) >;
+	};
+	/omit-if-no-ref/ outputxbar4_gpio6: outputxbar4_gpio6 {
+		pinmux = < G32R5_PINMUX(6, 2) >;
+	};
+	/omit-if-no-ref/ syncout_gpio6: syncout_gpio6 {
+		pinmux = < G32R5_PINMUX(6, 3) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio6: qep1_a_gpio6 {
+		pinmux = < G32R5_PINMUX(6, 5) >;
+	};
+	/omit-if-no-ref/ canb_tx_gpio6: canb_tx_gpio6 {
+		pinmux = < G32R5_PINMUX(6, 6) >;
+	};
+	/omit-if-no-ref/ spib_somi_gpio6: spib_somi_gpio6 {
+		pinmux = < G32R5_PINMUX(6, 7) >;
+	};
+	/omit-if-no-ref/ qspi_io0_gpio6: qspi_io0_gpio6 {
+		pinmux = < G32R5_PINMUX(6, 11) >;
+	};
+	/omit-if-no-ref/ pwm4_b_gpio7: pwm4_b_gpio7 {
+		pinmux = < G32R5_PINMUX(7, 1) >;
+	};
+	/omit-if-no-ref/ outputxbar5_gpio7: outputxbar5_gpio7 {
+		pinmux = < G32R5_PINMUX(7, 3) >;
+	};
+	/omit-if-no-ref/ qep1_b_gpio7: qep1_b_gpio7 {
+		pinmux = < G32R5_PINMUX(7, 5) >;
+	};
+	/omit-if-no-ref/ canb_rx_gpio7: canb_rx_gpio7 {
+		pinmux = < G32R5_PINMUX(7, 6) >;
+	};
+	/omit-if-no-ref/ spib_simo_gpio7: spib_simo_gpio7 {
+		pinmux = < G32R5_PINMUX(7, 7) >;
+	};
+	/omit-if-no-ref/ qspi_ss_n_gpio7: qspi_ss_n_gpio7 {
+		pinmux = < G32R5_PINMUX(7, 11) >;
+	};
+	/omit-if-no-ref/ pwm5_a_gpio8: pwm5_a_gpio8 {
+		pinmux = < G32R5_PINMUX(8, 1) >;
+	};
+	/omit-if-no-ref/ canb_tx_gpio8: canb_tx_gpio8 {
+		pinmux = < G32R5_PINMUX(8, 2) >;
+	};
+	/omit-if-no-ref/ adcsocao_gpio8: adcsocao_gpio8 {
+		pinmux = < G32R5_PINMUX(8, 3) >;
+	};
+	/omit-if-no-ref/ qep1_strobe_gpio8: qep1_strobe_gpio8 {
+		pinmux = < G32R5_PINMUX(8, 5) >;
+	};
+	/omit-if-no-ref/ uarta_tx_gpio8: uarta_tx_gpio8 {
+		pinmux = < G32R5_PINMUX(8, 6) >;
+	};
+	/omit-if-no-ref/ spia_simo_gpio8: spia_simo_gpio8 {
+		pinmux = < G32R5_PINMUX(8, 7) >;
+	};
+	/omit-if-no-ref/ i2ca_scl_gpio8: i2ca_scl_gpio8 {
+		pinmux = < G32R5_PINMUX(8, 9) >;
+	};
+	/omit-if-no-ref/ qspi_io3_gpio8: qspi_io3_gpio8 {
+		pinmux = < G32R5_PINMUX(8, 11) >;
+	};
+	/omit-if-no-ref/ pwm5_b_gpio9: pwm5_b_gpio9 {
+		pinmux = < G32R5_PINMUX(9, 1) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio9: uartb_tx_gpio9 {
+		pinmux = < G32R5_PINMUX(9, 2) >;
+	};
+	/omit-if-no-ref/ outputxbar6_gpio9: outputxbar6_gpio9 {
+		pinmux = < G32R5_PINMUX(9, 3) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio9: qep1_index_gpio9 {
+		pinmux = < G32R5_PINMUX(9, 5) >;
+	};
+	/omit-if-no-ref/ uarta_rx_gpio9: uarta_rx_gpio9 {
+		pinmux = < G32R5_PINMUX(9, 6) >;
+	};
+	/omit-if-no-ref/ spia_clk_gpio9: spia_clk_gpio9 {
+		pinmux = < G32R5_PINMUX(9, 7) >;
+	};
+	/omit-if-no-ref/ qspi_io2_gpio9: qspi_io2_gpio9 {
+		pinmux = < G32R5_PINMUX(9, 11) >;
+	};
+	/omit-if-no-ref/ pwm6_a_gpio10: pwm6_a_gpio10 {
+		pinmux = < G32R5_PINMUX(10, 1) >;
+	};
+	/omit-if-no-ref/ canb_rx_gpio10: canb_rx_gpio10 {
+		pinmux = < G32R5_PINMUX(10, 2) >;
+	};
+	/omit-if-no-ref/ adcsocbo_gpio10: adcsocbo_gpio10 {
+		pinmux = < G32R5_PINMUX(10, 3) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio10: qep1_a_gpio10 {
+		pinmux = < G32R5_PINMUX(10, 5) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio10: uartb_tx_gpio10 {
+		pinmux = < G32R5_PINMUX(10, 6) >;
+	};
+	/omit-if-no-ref/ spia_somi_gpio10: spia_somi_gpio10 {
+		pinmux = < G32R5_PINMUX(10, 7) >;
+	};
+	/omit-if-no-ref/ i2ca_sda_gpio10: i2ca_sda_gpio10 {
+		pinmux = < G32R5_PINMUX(10, 9) >;
+	};
+	/omit-if-no-ref/ qspi_sclk_gpio10: qspi_sclk_gpio10 {
+		pinmux = < G32R5_PINMUX(10, 11) >;
+	};
+	/omit-if-no-ref/ pwm6_b_gpio11: pwm6_b_gpio11 {
+		pinmux = < G32R5_PINMUX(11, 1) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio11: uartb_rx_gpio11 {
+		pinmux = < G32R5_PINMUX(11, 2) >;
+	};
+	/omit-if-no-ref/ outputxbar7_gpio11: outputxbar7_gpio11 {
+		pinmux = < G32R5_PINMUX(11, 3) >;
+	};
+	/omit-if-no-ref/ qep1_b_gpio11: qep1_b_gpio11 {
+		pinmux = < G32R5_PINMUX(11, 5) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio11_6: uartb_rx_gpio11_6 {
+		pinmux = < G32R5_PINMUX(11, 6) >;
+	};
+	/omit-if-no-ref/ spia_ste_gpio11: spia_ste_gpio11 {
+		pinmux = < G32R5_PINMUX(11, 7) >;
+	};
+	/omit-if-no-ref/ qep2_a_gpio11: qep2_a_gpio11 {
+		pinmux = < G32R5_PINMUX(11, 10) >;
+	};
+	/omit-if-no-ref/ qspi_io1_gpio11: qspi_io1_gpio11 {
+		pinmux = < G32R5_PINMUX(11, 11) >;
+	};
+	/omit-if-no-ref/ spia_simo_gpio11: spia_simo_gpio11 {
+		pinmux = < G32R5_PINMUX(11, 13) >;
+	};
+	/omit-if-no-ref/ pwm7_a_gpio12: pwm7_a_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 1) >;
+	};
+	/omit-if-no-ref/ canb_tx_gpio12: canb_tx_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 2) >;
+	};
+	/omit-if-no-ref/ spia_clk_gpio12: spia_clk_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 3) >;
+	};
+	/omit-if-no-ref/ qep1_strobe_gpio12: qep1_strobe_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 5) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio12: uartb_tx_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 6) >;
+	};
+	/omit-if-no-ref/ pmbusa_ctl_gpio12: pmbusa_ctl_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 7) >;
+	};
+	/omit-if-no-ref/ cana_rx_gpio12: cana_rx_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 10) >;
+	};
+	/omit-if-no-ref/ qspi_io0_gpio12: qspi_io0_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 11) >;
+	};
+	/omit-if-no-ref/ traced2_gpio12: traced2_gpio12 {
+		pinmux = < G32R5_PINMUX(12, 15) >;
+	};
+	/omit-if-no-ref/ pwm7_b_gpio13: pwm7_b_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 1) >;
+	};
+	/omit-if-no-ref/ canb_rx_gpio13: canb_rx_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 2) >;
+	};
+	/omit-if-no-ref/ spia_somi_gpio13: spia_somi_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 3) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio13: qep1_index_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 5) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio13: uartb_rx_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 6) >;
+	};
+	/omit-if-no-ref/ pmbusa_alert_gpio13: pmbusa_alert_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 7) >;
+	};
+	/omit-if-no-ref/ cana_tx_gpio13: cana_tx_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 10) >;
+	};
+	/omit-if-no-ref/ qspi_ss_n_gpio13: qspi_ss_n_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 11) >;
+	};
+	/omit-if-no-ref/ traced3_gpio13: traced3_gpio13 {
+		pinmux = < G32R5_PINMUX(13, 15) >;
+	};
+	/omit-if-no-ref/ pwm8_a_gpio14: pwm8_a_gpio14 {
+		pinmux = < G32R5_PINMUX(14, 1) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio14: uartb_tx_gpio14 {
+		pinmux = < G32R5_PINMUX(14, 2) >;
+	};
+	/omit-if-no-ref/ pwm3_a_gpio14: pwm3_a_gpio14 {
+		pinmux = < G32R5_PINMUX(14, 5) >;
+	};
+	/omit-if-no-ref/ outputxbar3_gpio14: outputxbar3_gpio14 {
+		pinmux = < G32R5_PINMUX(14, 6) >;
+	};
+	/omit-if-no-ref/ pmbusa_sda_gpio14: pmbusa_sda_gpio14 {
+		pinmux = < G32R5_PINMUX(14, 7) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio14: spib_clk_gpio14 {
+		pinmux = < G32R5_PINMUX(14, 9) >;
+	};
+	/omit-if-no-ref/ qep2_a_gpio14: qep2_a_gpio14 {
+		pinmux = < G32R5_PINMUX(14, 10) >;
+	};
+	/omit-if-no-ref/ pwm8_b_gpio15: pwm8_b_gpio15 {
+		pinmux = < G32R5_PINMUX(15, 1) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio15: uartb_rx_gpio15 {
+		pinmux = < G32R5_PINMUX(15, 2) >;
+	};
+	/omit-if-no-ref/ pwm3_b_gpio15: pwm3_b_gpio15 {
+		pinmux = < G32R5_PINMUX(15, 5) >;
+	};
+	/omit-if-no-ref/ outputxbar4_gpio15: outputxbar4_gpio15 {
+		pinmux = < G32R5_PINMUX(15, 6) >;
+	};
+	/omit-if-no-ref/ pmbusa_scl_gpio15: pmbusa_scl_gpio15 {
+		pinmux = < G32R5_PINMUX(15, 7) >;
+	};
+	/omit-if-no-ref/ spib_ste_gpio15: spib_ste_gpio15 {
+		pinmux = < G32R5_PINMUX(15, 9) >;
+	};
+	/omit-if-no-ref/ qep2_b_gpio15: qep2_b_gpio15 {
+		pinmux = < G32R5_PINMUX(15, 10) >;
+	};
+	/omit-if-no-ref/ spia_simo_gpio16: spia_simo_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 1) >;
+	};
+	/omit-if-no-ref/ canb_tx_gpio16: canb_tx_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 2) >;
+	};
+	/omit-if-no-ref/ outputxbar7_gpio16: outputxbar7_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 3) >;
+	};
+	/omit-if-no-ref/ pwm5_a_gpio16: pwm5_a_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 5) >;
+	};
+	/omit-if-no-ref/ uarta_tx_gpio16: uarta_tx_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d1_gpio16: sd1_d1_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 7) >;
+	};
+	/omit-if-no-ref/ qep1_strobe_gpio16: qep1_strobe_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 9) >;
+	};
+	/omit-if-no-ref/ pmbusa_scl_gpio16: pmbusa_scl_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 10) >;
+	};
+	/omit-if-no-ref/ xclkout_gpio16: xclkout_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 11) >;
+	};
+	/omit-if-no-ref/ spib_somi_gpio16: spib_somi_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 13) >;
+	};
+	/omit-if-no-ref/ qep2_b_gpio16: qep2_b_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 14) >;
+	};
+	/omit-if-no-ref/ traced0_gpio16: traced0_gpio16 {
+		pinmux = < G32R5_PINMUX(16, 15) >;
+	};
+	/omit-if-no-ref/ spia_somi_gpio17: spia_somi_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 1) >;
+	};
+	/omit-if-no-ref/ canb_rx_gpio17: canb_rx_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 2) >;
+	};
+	/omit-if-no-ref/ outputxbar8_gpio17: outputxbar8_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 3) >;
+	};
+	/omit-if-no-ref/ pwm5_b_gpio17: pwm5_b_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 5) >;
+	};
+	/omit-if-no-ref/ uarta_rx_gpio17: uarta_rx_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c1_gpio17: sd1_c1_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 7) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio17: qep1_index_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 9) >;
+	};
+	/omit-if-no-ref/ pmbusa_sda_gpio17: pmbusa_sda_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 10) >;
+	};
+	/omit-if-no-ref/ cana_tx_gpio17: cana_tx_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 13) >;
+	};
+	/omit-if-no-ref/ trgio_gpio17: trgio_gpio17 {
+		pinmux = < G32R5_PINMUX(17, 15) >;
+	};
+	/omit-if-no-ref/ spia_clk_gpio18: spia_clk_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 1) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio18: uartb_tx_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 2) >;
+	};
+	/omit-if-no-ref/ cana_rx_gpio18: cana_rx_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 3) >;
+	};
+	/omit-if-no-ref/ pwm6_a_gpio18: pwm6_a_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 5) >;
+	};
+	/omit-if-no-ref/ i2ca_scl_gpio18: i2ca_scl_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d2_gpio18: sd1_d2_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 7) >;
+	};
+	/omit-if-no-ref/ qep2_a_gpio18: qep2_a_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 9) >;
+	};
+	/omit-if-no-ref/ pmbusa_ctl_gpio18: pmbusa_ctl_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 10) >;
+	};
+	/omit-if-no-ref/ xclkout_gpio18: xclkout_gpio18 {
+		pinmux = < G32R5_PINMUX(18, 11) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio20: qep1_a_gpio20 {
+		pinmux = < G32R5_PINMUX(20, 1) >;
+	};
+	/omit-if-no-ref/ canb_tx_gpio20: canb_tx_gpio20 {
+		pinmux = < G32R5_PINMUX(20, 3) >;
+	};
+	/omit-if-no-ref/ spib_simo_gpio20: spib_simo_gpio20 {
+		pinmux = < G32R5_PINMUX(20, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d3_gpio20: sd1_d3_gpio20 {
+		pinmux = < G32R5_PINMUX(20, 7) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio20: spib_clk_gpio20 {
+		pinmux = < G32R5_PINMUX(20, 9) >;
+	};
+	/omit-if-no-ref/ qep1_b_gpio21: qep1_b_gpio21 {
+		pinmux = < G32R5_PINMUX(21, 1) >;
+	};
+	/omit-if-no-ref/ canb_rx_gpio21: canb_rx_gpio21 {
+		pinmux = < G32R5_PINMUX(21, 3) >;
+	};
+	/omit-if-no-ref/ spib_somi_gpio21: spib_somi_gpio21 {
+		pinmux = < G32R5_PINMUX(21, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c3_gpio21: sd1_c3_gpio21 {
+		pinmux = < G32R5_PINMUX(21, 7) >;
+	};
+	/omit-if-no-ref/ i2ca_scl_gpio21: i2ca_scl_gpio21 {
+		pinmux = < G32R5_PINMUX(21, 11) >;
+	};
+	/omit-if-no-ref/ qep1_strobe_gpio22: qep1_strobe_gpio22 {
+		pinmux = < G32R5_PINMUX(22, 1) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio22: uartb_tx_gpio22 {
+		pinmux = < G32R5_PINMUX(22, 3) >;
+	};
+	/omit-if-no-ref/ pwm4_a_gpio22: pwm4_a_gpio22 {
+		pinmux = < G32R5_PINMUX(22, 5) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio22: spib_clk_gpio22 {
+		pinmux = < G32R5_PINMUX(22, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d4_gpio22: sd1_d4_gpio22 {
+		pinmux = < G32R5_PINMUX(22, 7) >;
+	};
+	/omit-if-no-ref/ lina_tx_gpio22: lina_tx_gpio22 {
+		pinmux = < G32R5_PINMUX(22, 9) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio23: qep1_index_gpio23 {
+		pinmux = < G32R5_PINMUX(23, 1) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio23: uartb_rx_gpio23 {
+		pinmux = < G32R5_PINMUX(23, 3) >;
+	};
+	/omit-if-no-ref/ pwm4_b_gpio23: pwm4_b_gpio23 {
+		pinmux = < G32R5_PINMUX(23, 5) >;
+	};
+	/omit-if-no-ref/ spib_ste_gpio23: spib_ste_gpio23 {
+		pinmux = < G32R5_PINMUX(23, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c4_gpio23: sd1_c4_gpio23 {
+		pinmux = < G32R5_PINMUX(23, 7) >;
+	};
+	/omit-if-no-ref/ lina_rx_gpio23: lina_rx_gpio23 {
+		pinmux = < G32R5_PINMUX(23, 9) >;
+	};
+	/omit-if-no-ref/ i2ca_sda_gpio23: i2ca_sda_gpio23 {
+		pinmux = < G32R5_PINMUX(23, 11) >;
+	};
+	/omit-if-no-ref/ spib_simo_gpio23: spib_simo_gpio23 {
+		pinmux = < G32R5_PINMUX(23, 13) >;
+	};
+	/omit-if-no-ref/ outputxbar1_gpio24: outputxbar1_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 1) >;
+	};
+	/omit-if-no-ref/ qep2_a_gpio24: qep2_a_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 2) >;
+	};
+	/omit-if-no-ref/ pwm8_a_gpio24: pwm8_a_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 5) >;
+	};
+	/omit-if-no-ref/ spib_simo_gpio24: spib_simo_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d1_gpio24: sd1_d1_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 7) >;
+	};
+	/omit-if-no-ref/ pmbusa_scl_gpio24: pmbusa_scl_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 10) >;
+	};
+	/omit-if-no-ref/ uarta_tx_gpio24: uarta_tx_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 11) >;
+	};
+	/omit-if-no-ref/ errorsts_gpio24: errorsts_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 13) >;
+	};
+	/omit-if-no-ref/ traceclk_gpio24: traceclk_gpio24 {
+		pinmux = < G32R5_PINMUX(24, 15) >;
+	};
+	/omit-if-no-ref/ outputxbar2_gpio25: outputxbar2_gpio25 {
+		pinmux = < G32R5_PINMUX(25, 1) >;
+	};
+	/omit-if-no-ref/ qep2_b_gpio25: qep2_b_gpio25 {
+		pinmux = < G32R5_PINMUX(25, 2) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio25: qep1_a_gpio25 {
+		pinmux = < G32R5_PINMUX(25, 5) >;
+	};
+	/omit-if-no-ref/ spib_somi_gpio25: spib_somi_gpio25 {
+		pinmux = < G32R5_PINMUX(25, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c1_gpio25: sd1_c1_gpio25 {
+		pinmux = < G32R5_PINMUX(25, 7) >;
+	};
+	/omit-if-no-ref/ pmbusa_sda_gpio25: pmbusa_sda_gpio25 {
+		pinmux = < G32R5_PINMUX(25, 10) >;
+	};
+	/omit-if-no-ref/ uarta_rx_gpio25: uarta_rx_gpio25 {
+		pinmux = < G32R5_PINMUX(25, 11) >;
+	};
+	/omit-if-no-ref/ qspi_io3_gpio25: qspi_io3_gpio25 {
+		pinmux = < G32R5_PINMUX(25, 13) >;
+	};
+	/omit-if-no-ref/ outputxbar3_gpio26: outputxbar3_gpio26 {
+		pinmux = < G32R5_PINMUX(26, 1) >;
+	};
+	/omit-if-no-ref/ qep2_index_gpio26: qep2_index_gpio26 {
+		pinmux = < G32R5_PINMUX(26, 2) >;
+	};
+	/omit-if-no-ref/ outputxbar3_gpio26_5: outputxbar3_gpio26_5 {
+		pinmux = < G32R5_PINMUX(26, 5) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio26: spib_clk_gpio26 {
+		pinmux = < G32R5_PINMUX(26, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d2_gpio26: sd1_d2_gpio26 {
+		pinmux = < G32R5_PINMUX(26, 7) >;
+	};
+	/omit-if-no-ref/ pmbusa_ctl_gpio26: pmbusa_ctl_gpio26 {
+		pinmux = < G32R5_PINMUX(26, 10) >;
+	};
+	/omit-if-no-ref/ i2ca_sda_gpio26: i2ca_sda_gpio26 {
+		pinmux = < G32R5_PINMUX(26, 11) >;
+	};
+	/omit-if-no-ref/ qspi_io2_gpio26: qspi_io2_gpio26 {
+		pinmux = < G32R5_PINMUX(26, 13) >;
+	};
+	/omit-if-no-ref/ outputxbar4_gpio27: outputxbar4_gpio27 {
+		pinmux = < G32R5_PINMUX(27, 1) >;
+	};
+	/omit-if-no-ref/ qep2_strobe_gpio27: qep2_strobe_gpio27 {
+		pinmux = < G32R5_PINMUX(27, 2) >;
+	};
+	/omit-if-no-ref/ outputxbar4_gpio27_5: outputxbar4_gpio27_5 {
+		pinmux = < G32R5_PINMUX(27, 5) >;
+	};
+	/omit-if-no-ref/ spib_ste_gpio27: spib_ste_gpio27 {
+		pinmux = < G32R5_PINMUX(27, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c2_gpio27: sd1_c2_gpio27 {
+		pinmux = < G32R5_PINMUX(27, 7) >;
+	};
+	/omit-if-no-ref/ pmbusa_alert_gpio27: pmbusa_alert_gpio27 {
+		pinmux = < G32R5_PINMUX(27, 10) >;
+	};
+	/omit-if-no-ref/ i2ca_scl_gpio27: i2ca_scl_gpio27 {
+		pinmux = < G32R5_PINMUX(27, 11) >;
+	};
+	/omit-if-no-ref/ qspi_sclk_gpio27: qspi_sclk_gpio27 {
+		pinmux = < G32R5_PINMUX(27, 13) >;
+	};
+	/omit-if-no-ref/ uarta_rx_gpio28: uarta_rx_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 1) >;
+	};
+	/omit-if-no-ref/ pwm7_a_gpio28: pwm7_a_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 3) >;
+	};
+	/omit-if-no-ref/ outputxbar5_gpio28: outputxbar5_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 5) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio28: qep1_a_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d3_gpio28: sd1_d3_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 7) >;
+	};
+	/omit-if-no-ref/ qep2_strobe_gpio28: qep2_strobe_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 9) >;
+	};
+	/omit-if-no-ref/ lina_tx_gpio28: lina_tx_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 10) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio28: spib_clk_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 11) >;
+	};
+	/omit-if-no-ref/ errorsts_gpio28: errorsts_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 13) >;
+	};
+	/omit-if-no-ref/ traceclk_gpio28: traceclk_gpio28 {
+		pinmux = < G32R5_PINMUX(28, 15) >;
+	};
+	/omit-if-no-ref/ uarta_tx_gpio29: uarta_tx_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 1) >;
+	};
+	/omit-if-no-ref/ pwm7_b_gpio29: pwm7_b_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 3) >;
+	};
+	/omit-if-no-ref/ outputxbar6_gpio29: outputxbar6_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 5) >;
+	};
+	/omit-if-no-ref/ qep1_b_gpio29: qep1_b_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c3_gpio29: sd1_c3_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 7) >;
+	};
+	/omit-if-no-ref/ qep2_index_gpio29: qep2_index_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 9) >;
+	};
+	/omit-if-no-ref/ lina_rx_gpio29: lina_rx_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 10) >;
+	};
+	/omit-if-no-ref/ spib_ste_gpio29: spib_ste_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 11) >;
+	};
+	/omit-if-no-ref/ errorsts_gpio29: errorsts_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 13) >;
+	};
+	/omit-if-no-ref/ traced0_gpio29: traced0_gpio29 {
+		pinmux = < G32R5_PINMUX(29, 15) >;
+	};
+	/omit-if-no-ref/ cana_rx_gpio30: cana_rx_gpio30 {
+		pinmux = < G32R5_PINMUX(30, 1) >;
+	};
+	/omit-if-no-ref/ pwm1_a_gpio30: pwm1_a_gpio30 {
+		pinmux = < G32R5_PINMUX(30, 2) >;
+	};
+	/omit-if-no-ref/ spib_simo_gpio30: spib_simo_gpio30 {
+		pinmux = < G32R5_PINMUX(30, 3) >;
+	};
+	/omit-if-no-ref/ outputxbar7_gpio30: outputxbar7_gpio30 {
+		pinmux = < G32R5_PINMUX(30, 5) >;
+	};
+	/omit-if-no-ref/ qep1_strobe_gpio30: qep1_strobe_gpio30 {
+		pinmux = < G32R5_PINMUX(30, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d4_gpio30: sd1_d4_gpio30 {
+		pinmux = < G32R5_PINMUX(30, 7) >;
+	};
+	/omit-if-no-ref/ qspi_io3_gpio30: qspi_io3_gpio30 {
+		pinmux = < G32R5_PINMUX(30, 11) >;
+	};
+	/omit-if-no-ref/ traced1_gpio30: traced1_gpio30 {
+		pinmux = < G32R5_PINMUX(30, 15) >;
+	};
+	/omit-if-no-ref/ cana_tx_gpio31: cana_tx_gpio31 {
+		pinmux = < G32R5_PINMUX(31, 1) >;
+	};
+	/omit-if-no-ref/ pwm1_b_gpio31: pwm1_b_gpio31 {
+		pinmux = < G32R5_PINMUX(31, 2) >;
+	};
+	/omit-if-no-ref/ spib_somi_gpio31: spib_somi_gpio31 {
+		pinmux = < G32R5_PINMUX(31, 3) >;
+	};
+	/omit-if-no-ref/ outputxbar8_gpio31: outputxbar8_gpio31 {
+		pinmux = < G32R5_PINMUX(31, 5) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio31: qep1_index_gpio31 {
+		pinmux = < G32R5_PINMUX(31, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c4_gpio31: sd1_c4_gpio31 {
+		pinmux = < G32R5_PINMUX(31, 7) >;
+	};
+	/omit-if-no-ref/ qspi_io1_gpio31: qspi_io1_gpio31 {
+		pinmux = < G32R5_PINMUX(31, 11) >;
+	};
+	/omit-if-no-ref/ traced2_gpio31: traced2_gpio31 {
+		pinmux = < G32R5_PINMUX(31, 15) >;
+	};
+	/omit-if-no-ref/ i2ca_sda_gpio32: i2ca_sda_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 1) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio32: spib_clk_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 3) >;
+	};
+	/omit-if-no-ref/ pwm8_b_gpio32: pwm8_b_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 5) >;
+	};
+	/omit-if-no-ref/ lina_tx_gpio32: lina_tx_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d3_gpio32: sd1_d3_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 7) >;
+	};
+	/omit-if-no-ref/ cana_tx_gpio32: cana_tx_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 10) >;
+	};
+	/omit-if-no-ref/ qspi_io0_gpio32: qspi_io0_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 11) >;
+	};
+	/omit-if-no-ref/ adcsocbo_gpio32: adcsocbo_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 13) >;
+	};
+	/omit-if-no-ref/ trgio_gpio32: trgio_gpio32 {
+		pinmux = < G32R5_PINMUX(32, 15) >;
+	};
+	/omit-if-no-ref/ i2ca_scl_gpio33: i2ca_scl_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 1) >;
+	};
+	/omit-if-no-ref/ qep2_b_gpio33: qep2_b_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 2) >;
+	};
+	/omit-if-no-ref/ spib_ste_gpio33: spib_ste_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 3) >;
+	};
+	/omit-if-no-ref/ outputxbar4_gpio33: outputxbar4_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 5) >;
+	};
+	/omit-if-no-ref/ lina_rx_gpio33: lina_rx_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c3_gpio33: sd1_c3_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 7) >;
+	};
+	/omit-if-no-ref/ cana_rx_gpio33: cana_rx_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 10) >;
+	};
+	/omit-if-no-ref/ qspi_ss_n_gpio33: qspi_ss_n_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 11) >;
+	};
+	/omit-if-no-ref/ adcsocao_gpio33: adcsocao_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 13) >;
+	};
+	/omit-if-no-ref/ traced1_gpio33: traced1_gpio33 {
+		pinmux = < G32R5_PINMUX(33, 15) >;
+	};
+	/omit-if-no-ref/ outputxbar1_gpio34: outputxbar1_gpio34 {
+		pinmux = < G32R5_PINMUX(34, 1) >;
+	};
+	/omit-if-no-ref/ pmbusa_sda_gpio34: pmbusa_sda_gpio34 {
+		pinmux = < G32R5_PINMUX(34, 6) >;
+	};
+	/omit-if-no-ref/ traced3_gpio34: traced3_gpio34 {
+		pinmux = < G32R5_PINMUX(34, 15) >;
+	};
+	/omit-if-no-ref/ uarta_rx_gpio35: uarta_rx_gpio35 {
+		pinmux = < G32R5_PINMUX(35, 1) >;
+	};
+	/omit-if-no-ref/ i2ca_sda_gpio35: i2ca_sda_gpio35 {
+		pinmux = < G32R5_PINMUX(35, 3) >;
+	};
+	/omit-if-no-ref/ cana_rx_gpio35: cana_rx_gpio35 {
+		pinmux = < G32R5_PINMUX(35, 5) >;
+	};
+	/omit-if-no-ref/ pmbusa_scl_gpio35: pmbusa_scl_gpio35 {
+		pinmux = < G32R5_PINMUX(35, 6) >;
+	};
+	/omit-if-no-ref/ lina_rx_gpio35: lina_rx_gpio35 {
+		pinmux = < G32R5_PINMUX(35, 7) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio35: qep1_a_gpio35 {
+		pinmux = < G32R5_PINMUX(35, 9) >;
+	};
+	/omit-if-no-ref/ pmbusa_ctl_gpio35: pmbusa_ctl_gpio35 {
+		pinmux = < G32R5_PINMUX(35, 10) >;
+	};
+	/omit-if-no-ref/ tdi_gpio35: tdi_gpio35 {
+		pinmux = < G32R5_PINMUX(35, 15) >;
+	};
+	/omit-if-no-ref/ outputxbar2_gpio37: outputxbar2_gpio37 {
+		pinmux = < G32R5_PINMUX(37, 1) >;
+	};
+	/omit-if-no-ref/ i2ca_scl_gpio37: i2ca_scl_gpio37 {
+		pinmux = < G32R5_PINMUX(37, 3) >;
+	};
+	/omit-if-no-ref/ uarta_tx_gpio37: uarta_tx_gpio37 {
+		pinmux = < G32R5_PINMUX(37, 5) >;
+	};
+	/omit-if-no-ref/ cana_tx_gpio37: cana_tx_gpio37 {
+		pinmux = < G32R5_PINMUX(37, 6) >;
+	};
+	/omit-if-no-ref/ lina_tx_gpio37: lina_tx_gpio37 {
+		pinmux = < G32R5_PINMUX(37, 7) >;
+	};
+	/omit-if-no-ref/ qep1_b_gpio37: qep1_b_gpio37 {
+		pinmux = < G32R5_PINMUX(37, 9) >;
+	};
+	/omit-if-no-ref/ pmbusa_alert_gpio37: pmbusa_alert_gpio37 {
+		pinmux = < G32R5_PINMUX(37, 10) >;
+	};
+	/omit-if-no-ref/ tdo_gpio37: tdo_gpio37 {
+		pinmux = < G32R5_PINMUX(37, 15) >;
+	};
+	/omit-if-no-ref/ canb_rx_gpio39: canb_rx_gpio39 {
+		pinmux = < G32R5_PINMUX(39, 6) >;
+	};
+	/omit-if-no-ref/ qspi_io3_gpio39: qspi_io3_gpio39 {
+		pinmux = < G32R5_PINMUX(39, 11) >;
+	};
+	/omit-if-no-ref/ pmbusa_sda_gpio40: pmbusa_sda_gpio40 {
+		pinmux = < G32R5_PINMUX(40, 6) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio40: uartb_tx_gpio40 {
+		pinmux = < G32R5_PINMUX(40, 9) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio40: qep1_a_gpio40 {
+		pinmux = < G32R5_PINMUX(40, 10) >;
+	};
+	/omit-if-no-ref/ qspi_io2_gpio40: qspi_io2_gpio40 {
+		pinmux = < G32R5_PINMUX(40, 11) >;
+	};
+	/omit-if-no-ref/ pwm2_a_gpio41: pwm2_a_gpio41 {
+		pinmux = < G32R5_PINMUX(41, 1) >;
+	};
+	/omit-if-no-ref/ spib_ste_gpio41: spib_ste_gpio41 {
+		pinmux = < G32R5_PINMUX(41, 3) >;
+	};
+	/omit-if-no-ref/ pmbusa_scl_gpio41: pmbusa_scl_gpio41 {
+		pinmux = < G32R5_PINMUX(41, 6) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio41: uartb_rx_gpio41 {
+		pinmux = < G32R5_PINMUX(41, 9) >;
+	};
+	/omit-if-no-ref/ qep1_b_gpio41: qep1_b_gpio41 {
+		pinmux = < G32R5_PINMUX(41, 10) >;
+	};
+	/omit-if-no-ref/ qspi_sclk_gpio41: qspi_sclk_gpio41 {
+		pinmux = < G32R5_PINMUX(41, 11) >;
+	};
+	/omit-if-no-ref/ spib_somi_gpio41: spib_somi_gpio41 {
+		pinmux = < G32R5_PINMUX(41, 13) >;
+	};
+	/omit-if-no-ref/ lina_rx_gpio42: lina_rx_gpio42 {
+		pinmux = < G32R5_PINMUX(42, 2) >;
+	};
+	/omit-if-no-ref/ outputxbar5_gpio42: outputxbar5_gpio42 {
+		pinmux = < G32R5_PINMUX(42, 3) >;
+	};
+	/omit-if-no-ref/ pmbusa_ctl_gpio42: pmbusa_ctl_gpio42 {
+		pinmux = < G32R5_PINMUX(42, 5) >;
+	};
+	/omit-if-no-ref/ i2ca_sda_gpio42: i2ca_sda_gpio42 {
+		pinmux = < G32R5_PINMUX(42, 6) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio42: uartb_rx_gpio42 {
+		pinmux = < G32R5_PINMUX(42, 9) >;
+	};
+	/omit-if-no-ref/ qep1_strobe_gpio42: qep1_strobe_gpio42 {
+		pinmux = < G32R5_PINMUX(42, 10) >;
+	};
+	/omit-if-no-ref/ outputxbar6_gpio43: outputxbar6_gpio43 {
+		pinmux = < G32R5_PINMUX(43, 3) >;
+	};
+	/omit-if-no-ref/ pmbusa_alert_gpio43: pmbusa_alert_gpio43 {
+		pinmux = < G32R5_PINMUX(43, 5) >;
+	};
+	/omit-if-no-ref/ i2ca_scl_gpio43: i2ca_scl_gpio43 {
+		pinmux = < G32R5_PINMUX(43, 6) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio43: uartb_tx_gpio43 {
+		pinmux = < G32R5_PINMUX(43, 9) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio43: qep1_index_gpio43 {
+		pinmux = < G32R5_PINMUX(43, 10) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio44: qep1_a_gpio44 {
+		pinmux = < G32R5_PINMUX(44, 2) >;
+	};
+	/omit-if-no-ref/ outputxbar7_gpio44: outputxbar7_gpio44 {
+		pinmux = < G32R5_PINMUX(44, 3) >;
+	};
+	/omit-if-no-ref/ qspi_io2_gpio44: qspi_io2_gpio44 {
+		pinmux = < G32R5_PINMUX(44, 11) >;
+	};
+	/omit-if-no-ref/ outputxbar8_gpio45: outputxbar8_gpio45 {
+		pinmux = < G32R5_PINMUX(45, 3) >;
+	};
+	/omit-if-no-ref/ qspi_io0_gpio45: qspi_io0_gpio45 {
+		pinmux = < G32R5_PINMUX(45, 11) >;
+	};
+	/omit-if-no-ref/ lina_tx_gpio46: lina_tx_gpio46 {
+		pinmux = < G32R5_PINMUX(46, 3) >;
+	};
+	/omit-if-no-ref/ qspi_ss_n_gpio46: qspi_ss_n_gpio46 {
+		pinmux = < G32R5_PINMUX(46, 11) >;
+	};
+	/omit-if-no-ref/ pwm2_b_gpio47: pwm2_b_gpio47 {
+		pinmux = < G32R5_PINMUX(47, 1) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio47: qep1_a_gpio47 {
+		pinmux = < G32R5_PINMUX(47, 2) >;
+	};
+	/omit-if-no-ref/ lina_rx_gpio47: lina_rx_gpio47 {
+		pinmux = < G32R5_PINMUX(47, 3) >;
+	};
+	/omit-if-no-ref/ spib_simo_gpio47: spib_simo_gpio47 {
+		pinmux = < G32R5_PINMUX(47, 6) >;
+	};
+	/omit-if-no-ref/ pmbusa_sda_gpio47: pmbusa_sda_gpio47 {
+		pinmux = < G32R5_PINMUX(47, 7) >;
+	};
+	/omit-if-no-ref/ outputxbar3_gpio48: outputxbar3_gpio48 {
+		pinmux = < G32R5_PINMUX(48, 1) >;
+	};
+	/omit-if-no-ref/ canb_tx_gpio48: canb_tx_gpio48 {
+		pinmux = < G32R5_PINMUX(48, 3) >;
+	};
+	/omit-if-no-ref/ uarta_tx_gpio48: uarta_tx_gpio48 {
+		pinmux = < G32R5_PINMUX(48, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d1_gpio48: sd1_d1_gpio48 {
+		pinmux = < G32R5_PINMUX(48, 7) >;
+	};
+	/omit-if-no-ref/ outputxbar4_gpio49: outputxbar4_gpio49 {
+		pinmux = < G32R5_PINMUX(49, 1) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio49: qep1_index_gpio49 {
+		pinmux = < G32R5_PINMUX(49, 2) >;
+	};
+	/omit-if-no-ref/ canb_rx_gpio49: canb_rx_gpio49 {
+		pinmux = < G32R5_PINMUX(49, 3) >;
+	};
+	/omit-if-no-ref/ uarta_rx_gpio49: uarta_rx_gpio49 {
+		pinmux = < G32R5_PINMUX(49, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c1_gpio49: sd1_c1_gpio49 {
+		pinmux = < G32R5_PINMUX(49, 7) >;
+	};
+	/omit-if-no-ref/ qep2_index_gpio49: qep2_index_gpio49 {
+		pinmux = < G32R5_PINMUX(49, 9) >;
+	};
+	/omit-if-no-ref/ syncout_gpio49: syncout_gpio49 {
+		pinmux = < G32R5_PINMUX(49, 11) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio50: qep1_a_gpio50 {
+		pinmux = < G32R5_PINMUX(50, 1) >;
+	};
+	/omit-if-no-ref/ spib_simo_gpio50: spib_simo_gpio50 {
+		pinmux = < G32R5_PINMUX(50, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d2_gpio50: sd1_d2_gpio50 {
+		pinmux = < G32R5_PINMUX(50, 7) >;
+	};
+	/omit-if-no-ref/ qep1_b_gpio51: qep1_b_gpio51 {
+		pinmux = < G32R5_PINMUX(51, 1) >;
+	};
+	/omit-if-no-ref/ spib_somi_gpio51: spib_somi_gpio51 {
+		pinmux = < G32R5_PINMUX(51, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c2_gpio51: sd1_c2_gpio51 {
+		pinmux = < G32R5_PINMUX(51, 7) >;
+	};
+	/omit-if-no-ref/ qep1_strobe_gpio52: qep1_strobe_gpio52 {
+		pinmux = < G32R5_PINMUX(52, 1) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio52: spib_clk_gpio52 {
+		pinmux = < G32R5_PINMUX(52, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d3_gpio52: sd1_d3_gpio52 {
+		pinmux = < G32R5_PINMUX(52, 7) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio53: qep1_index_gpio53 {
+		pinmux = < G32R5_PINMUX(53, 1) >;
+	};
+	/omit-if-no-ref/ spib_ste_gpio53: spib_ste_gpio53 {
+		pinmux = < G32R5_PINMUX(53, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c3_gpio53: sd1_c3_gpio53 {
+		pinmux = < G32R5_PINMUX(53, 7) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio53: uartb_rx_gpio53 {
+		pinmux = < G32R5_PINMUX(53, 9) >;
+	};
+	/omit-if-no-ref/ spia_simo_gpio54: spia_simo_gpio54 {
+		pinmux = < G32R5_PINMUX(54, 1) >;
+	};
+	/omit-if-no-ref/ qep2_a_gpio54: qep2_a_gpio54 {
+		pinmux = < G32R5_PINMUX(54, 5) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio54: uartb_tx_gpio54 {
+		pinmux = < G32R5_PINMUX(54, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d4_gpio54: sd1_d4_gpio54 {
+		pinmux = < G32R5_PINMUX(54, 7) >;
+	};
+	/omit-if-no-ref/ spia_somi_gpio55: spia_somi_gpio55 {
+		pinmux = < G32R5_PINMUX(55, 1) >;
+	};
+	/omit-if-no-ref/ qep2_b_gpio55: qep2_b_gpio55 {
+		pinmux = < G32R5_PINMUX(55, 5) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio55: uartb_rx_gpio55 {
+		pinmux = < G32R5_PINMUX(55, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c4_gpio55: sd1_c4_gpio55 {
+		pinmux = < G32R5_PINMUX(55, 7) >;
+	};
+	/omit-if-no-ref/ spia_clk_gpio56: spia_clk_gpio56 {
+		pinmux = < G32R5_PINMUX(56, 1) >;
+	};
+	/omit-if-no-ref/ qep2_strobe_gpio56: qep2_strobe_gpio56 {
+		pinmux = < G32R5_PINMUX(56, 5) >;
+	};
+	/omit-if-no-ref/ uartb_tx_gpio56: uartb_tx_gpio56 {
+		pinmux = < G32R5_PINMUX(56, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d3_gpio56: sd1_d3_gpio56 {
+		pinmux = < G32R5_PINMUX(56, 7) >;
+	};
+	/omit-if-no-ref/ spib_simo_gpio56: spib_simo_gpio56 {
+		pinmux = < G32R5_PINMUX(56, 9) >;
+	};
+	/omit-if-no-ref/ qep1_a_gpio56: qep1_a_gpio56 {
+		pinmux = < G32R5_PINMUX(56, 11) >;
+	};
+	/omit-if-no-ref/ spia_ste_gpio57: spia_ste_gpio57 {
+		pinmux = < G32R5_PINMUX(57, 1) >;
+	};
+	/omit-if-no-ref/ qep2_index_gpio57: qep2_index_gpio57 {
+		pinmux = < G32R5_PINMUX(57, 5) >;
+	};
+	/omit-if-no-ref/ uartb_rx_gpio57: uartb_rx_gpio57 {
+		pinmux = < G32R5_PINMUX(57, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c3_gpio57: sd1_c3_gpio57 {
+		pinmux = < G32R5_PINMUX(57, 7) >;
+	};
+	/omit-if-no-ref/ spib_somi_gpio57: spib_somi_gpio57 {
+		pinmux = < G32R5_PINMUX(57, 9) >;
+	};
+	/omit-if-no-ref/ qep1_b_gpio57: qep1_b_gpio57 {
+		pinmux = < G32R5_PINMUX(57, 11) >;
+	};
+	/omit-if-no-ref/ outputxbar1_gpio58: outputxbar1_gpio58 {
+		pinmux = < G32R5_PINMUX(58, 5) >;
+	};
+	/omit-if-no-ref/ spib_clk_gpio58: spib_clk_gpio58 {
+		pinmux = < G32R5_PINMUX(58, 6) >;
+	};
+	/omit-if-no-ref/ sd1_d4_gpio58: sd1_d4_gpio58 {
+		pinmux = < G32R5_PINMUX(58, 7) >;
+	};
+	/omit-if-no-ref/ lina_tx_gpio58: lina_tx_gpio58 {
+		pinmux = < G32R5_PINMUX(58, 9) >;
+	};
+	/omit-if-no-ref/ canb_tx_gpio58: canb_tx_gpio58 {
+		pinmux = < G32R5_PINMUX(58, 10) >;
+	};
+	/omit-if-no-ref/ qep1_strobe_gpio58: qep1_strobe_gpio58 {
+		pinmux = < G32R5_PINMUX(58, 11) >;
+	};
+	/omit-if-no-ref/ outputxbar2_gpio59: outputxbar2_gpio59 {
+		pinmux = < G32R5_PINMUX(59, 5) >;
+	};
+	/omit-if-no-ref/ spib_ste_gpio59: spib_ste_gpio59 {
+		pinmux = < G32R5_PINMUX(59, 6) >;
+	};
+	/omit-if-no-ref/ sd1_c4_gpio59: sd1_c4_gpio59 {
+		pinmux = < G32R5_PINMUX(59, 7) >;
+	};
+	/omit-if-no-ref/ lina_rx_gpio59: lina_rx_gpio59 {
+		pinmux = < G32R5_PINMUX(59, 9) >;
+	};
+	/omit-if-no-ref/ canb_rx_gpio59: canb_rx_gpio59 {
+		pinmux = < G32R5_PINMUX(59, 10) >;
+	};
+	/omit-if-no-ref/ qep1_index_gpio59: qep1_index_gpio59 {
+		pinmux = < G32R5_PINMUX(59, 11) >;
+	};
+};
+
