@@ -69,6 +69,7 @@
 			imult = <1>;
 			fmult = <0>;
 			odiv = <1>;
+			pllsysclkdiv = <1>;
 			status = "disabled";
 		};
 	};
@@ -137,21 +138,24 @@
 		uarta: uart@40000800 {
 			compatible = "geehy,g32r5-uart";
 			reg = <0x40000800 0x400>;
-			interrupts = <96 0>;
+			interrupts = <96 0>, <97 0>;
+			interrupt-names = "rx", "tx";
 			status = "disabled";
 		};
 
 		uartb: uart@40000c00 {
 			compatible = "geehy,g32r5-uart";
 			reg = <0x40000c00 0x400>;
-			interrupts = <98 0>;
+			interrupts = <98 0>, <99 0>;
+			interrupt-names = "rx", "tx";
 			status = "disabled";
 		};
 
 		uartc: uart@40001000 {
 			compatible = "geehy,g32r5-uart";
 			reg = <0x40001000 0x400>;
-			interrupts = <186 0>;
+			interrupts = <186 0>, <187 0>;
+			interrupt-names = "rx", "tx";
 			status = "disabled";
 		};
 

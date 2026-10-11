@@ -27,11 +27,13 @@ void soc_prep_hook(void)
     __DSB();
     __ISB();
     
-    // Disable the Watchdog Timer
+    /* Disable the Watchdog Timer. Shared block, owned by CPU0 in AMP. */
+#if !defined(__CORE_CPU1__)
     __wrprt_disable();
     WD->WDCR = (0x5U << WD_WDCR_WDCHK_Pos) |
                (0x1U << WD_WDCR_WDDIS_Pos);
     __wrprt_enable();
+#endif
 }
 
 #endif /* CONFIG_SOC_PREP_HOOK */

@@ -134,9 +134,10 @@ static void pin_leave_analog(uint32_t pin_num)
 
 #if defined(CONFIG_SOC_SERIES_G32R502)
 	if (agpio_pin(pin_num)) {
-		volatile uint32_t *agpio =
-			(uint32_t *)(ANALOGSUBSYS_BASE + AS_O_AGPIOCTRLA +
-				     ((pin_num / 32U) * 4U));
+		/* AGPIOCTRLA covers GPIOA bits, AGPIOCTRLH covers GPIOH (224+).
+		 * Pick the register by port; do not derive it from address math. */
+		uint32_t off = (pin_num < 32U) ? AS_O_AGPIOCTRLA : AS_O_AGPIOCTRLH;
+		volatile uint32_t *agpio = (uint32_t *)(ANALOGSUBSYS_BASE + off);
 
 		*agpio &= ~(1U << (pin_num % 32U));
 	}

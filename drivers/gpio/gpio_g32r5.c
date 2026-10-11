@@ -476,6 +476,11 @@ static int gpio_g32r5_configure(const struct device *dev,
 		return -EINVAL;
 	}
 
+	/* Hardware has pull-up only. */
+	if ((flags & GPIO_PULL_DOWN) != 0U) {
+		return -ENOTSUP;
+	}
+
 	bit = BIT(pin);
 	input_only = (config->input_only_mask & bit) != 0U;
 	if (output && input_only) {
@@ -507,7 +512,8 @@ static int gpio_g32r5_configure(const struct device *dev,
 
 		ptr = (uint32_t *)(config->ctrl_regs_base + GPDIR_OFFSET);
 		*ptr |= bit;
-	} else if (input && !input_only) {
+	} else if (!input_only) {
+		/* Input or disabled: clear DIR so the pad stops driving. */
 		ptr = (uint32_t *)(config->ctrl_regs_base + GPDIR_OFFSET);
 		*ptr &= ~bit;
 	}

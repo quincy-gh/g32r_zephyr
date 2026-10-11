@@ -102,12 +102,19 @@ static DEVICE_API(clock_control, g32r5_clock_control_api) = {
 
 static int g32r5_control_init(const struct device *dev)
 {
+#if defined(__CORE_CPU1__)
+    /* AMP: CPU0 owns the shared clock tree (PLL, APB/LSP dividers,
+     * XCLKOUT). CPU1 reports rates from DT only and writes nothing. */
+    ARG_UNUSED(dev);
+    SystemCoreClock = DT_PROP(DT_NODELABEL(sysclk), clock_frequency);
+    return 0;
+#else
     const struct clock_control_g32r5_config *config = dev->config;
-    volatile uint32_t sysclk_freq;
+    uint32_t sysclk_freq;
 
 #if (SYSCLK_SRC == OSC_SRC_PLL)
-    volatile uint32_t cfg;
-    volatile uint32_t pll_freq;
+    uint32_t cfg;
+    uint32_t pll_freq;
     uint16_t imult = DT_PROP(DT_NODELABEL(pll), imult);
     uint16_t fmult = DT_PROP(DT_NODELABEL(pll), fmult);
     uint16_t odiv = DT_PROP(DT_NODELABEL(pll), odiv);
@@ -116,7 +123,7 @@ static int g32r5_control_init(const struct device *dev)
 #if (PLL_SRC == OSC_SRC_INTOSC_1)
     cfg = SYSCTL_OSCSRC_OSC1;
     sysclk_freq = 10000000UL;
-#elif (SYSCLK_SRC == OSC_SRC_INTOSC_2)
+#elif (PLL_SRC == OSC_SRC_INTOSC_2)
     cfg = SYSCTL_OSCSRC_OSC2;
     sysclk_freq = 10000000UL;
 #else
@@ -128,30 +135,20 @@ static int g32r5_control_init(const struct device *dev)
     if (pll_freq < 1000000UL || pll_freq > 600000000UL)
     {
         // f(pll_vco): [1MHz, 600MHz]
-
-        while (1)
-        {
-            ;
-        }
+        return -EINVAL;
     }
 
     pll_freq /= odiv; // f(pll_out) = f(pll_vco) / odiv
     if (pll_freq < 1000000UL || pll_freq > 300000000UL)
     {
         // f(pll_out): [1MHz, 300MHz]
-        while (1)
-        {
-            ;
-        }
+        return -EINVAL;
     }
 
     sysclk_freq = pll_freq / pllsysclkdiv; // f(sysclk) = f(pll_out) / pllsysclkdiv
     if (DT_PROP(DT_NODELABEL(sysclk), clock_frequency) != sysclk_freq)
     {
-        while (1)
-        {
-            ;
-        }
+        return -EINVAL;
     }
 
     cfg |= SYSCTL_IMULT(imult);
@@ -205,10 +202,7 @@ static int g32r5_control_init(const struct device *dev)
 
     if (DT_PROP(DT_NODELABEL(sysclk), clock_frequency) != sysclk_freq)
     {
-        while (1)
-        {
-            ;
-        }
+        return -EINVAL;
     }
 
 #endif
@@ -216,24 +210,20 @@ static int g32r5_control_init(const struct device *dev)
     if (config->apb_div < 1 || config->apb_div > 2)
     {
         // APB prescaler: [1, 2]
-        while (1)
-        {
-            ;
-        }
+        return -EINVAL;
     }
 
     SysCtl_setAPBClock((SysCtl_APBCLKPrescaler)(config->apb_div >> 1));
 
-    if (config->lsp_div < 1 || config->lsp_div > 14)
+    if (config->lsp_div < 1 || config->lsp_div > 14 ||
+        ((config->lsp_div != 1) && ((config->lsp_div & 1U) != 0U)))
     {
-        // LSP prescaler: [1, 14]
-        while (1)
-        {
-            ;
-        }
+        // LSP prescaler: 1 or even, [1, 14]
+        return -EINVAL;
     }
 
-    SysCtl_setLowSpeedClock((SysCtl_LSPCLKPrescaler)(config->lsp_div > 1));
+    // LOSPCP encoding: value 0 is /1, value N is /(2*N), so div / 2 is the code.
+    SysCtl_setLowSpeedClock((SysCtl_LSPCLKPrescaler)(config->lsp_div / 2));
 
     SystemCoreClock = sysclk_freq;
 
@@ -268,6 +258,7 @@ static int g32r5_control_init(const struct device *dev)
 #endif /* #if CONFIG_XCLKOUT */
 
     return 0;
+#endif /* #if defined(__CORE_CPU1__) */
 }
 
 static const struct clock_control_g32r5_config g32r5_cc_cfg = {

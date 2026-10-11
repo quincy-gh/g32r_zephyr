@@ -12,7 +12,9 @@
 
 # 移植情况说明
 
-**重要提示**：本项目目前是基于 `EXTRA MODULES` 形式进行移植，使用时需要在编译命令追加 `-DZEPHYR_EXTRA_MODULES` 参数。
+当前支持 zephyr 的版本是 v4.5.0-rc1，会尽量保持跟进 zephyr 版本升级。
+
+**重要提示**：本项目目前是基于 `EXTRA MODULES` 形式进行移植，使用时需要指定 `ZEPHYR_EXTRA_MODULES`。可以采用环境变量，或是 `-D` 参数传递。
 
 ## 支持的器件
 
@@ -23,7 +25,7 @@
 ## 支持的编译器
 
 - GCC, v15.3.1
-- ARMClang, v6.24
+- ARMClang, v6.22
 
 ## 外设列表
 
@@ -66,19 +68,21 @@ git clone https://github.com/quincy-gh/g32r_zephyr.git
 
 ## S3 编译
 
-以下命令可以编译 zephyr 自带的 blink 示例，基于 `g32r501_eval` 开发板。
+在 zephyr 开发环境下执行以下命令可以编译 zephyr 自带的 blink 示例，基于 `g32r501_eval` 开发板。
 
 ```
 cd g32r5_zephyr
-west build -p -b g32r501_eval/g32r501dvxt/cpu0 %ZEPHYR_BASE%\samples\basic\blinky -- -DZEPHYR_EXTRA_MODULES=%cd%
+set ZEPHYR_EXTRA_MODULES=%cd%
+west build -p -b g32r501_eval/g32r501dvxt/cpu0 %ZEPHYR_BASE%\samples\basic\blinky
 ```
 
 其中 `g32r501_eval/g32r501dvxt/cpu0` 指定了开发板的名称以及核心0，也可以简化为 `g32r501_eval//cpu0`，注意是两个 `//`。
- 
-上述编译命令使用了几个环境变量，只能在 `命令行窗口(cmd)` 运行。如果使用 `power shell` 或者 `pwsh`，环境变量的写法不一样，可以参考下面的命令：
 
-```
-west build -p -b g32r501_eval/g32r501dvxt/cpu0 $env:ZEPHYR_BASE\samples\basic\blinky -- -DZEPHYR_EXTRA_MODULES="$PWD"
+上面的命令是在 `命令行窗口(cmd)` 执行，如果是 `power shell` 或者 `pwsh`，请参考下面的命令：
+
+```pwsh
+$env:ZEPHYR_EXTRA_MODULES = $PWD
+west build -p -b g32r501_eval/g32r501dvxt/cpu0 $env:ZEPHYR_BASE\samples\basic\blinky
 ```
 
 ## S4 烧录
@@ -89,7 +93,14 @@ west build -p -b g32r501_eval/g32r501dvxt/cpu0 $env:ZEPHYR_BASE\samples\basic\bl
 west flash
 ```
 
-该命令调用 `pyocd` 进行烧录。需要注意的是 G32R5 系列 MCU 尚未得到 pyocd 的原生支持，需要参考极海官方的应用笔记《AN1126_G32R5xx IDE and Tool Chain User Guide》打补丁~
+该命令调用 `pyocd` 进行烧录。
+
+**需要注意**的是：截止2026年10月 G32R5 系列 MCU 尚未得到 pyocd 的原生支持，需要参考极海官方的应用笔记《AN1126_G32R5xx IDE and Tool Chain User Guide》打补丁~ 或者使用下面的方式安装打过补丁的 pyocd：
+
+```
+pip install --upgrade --force-reinstall --no-deps git+https://github.com/quincy-gh/pyOCD.git@g32r5xx
+```
+
 
 # 其他
 
