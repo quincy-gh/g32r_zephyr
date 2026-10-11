@@ -14,10 +14,17 @@ properties:
   interrupts:
     required: true
 
+  interrupt-names:
+    type: string-array
+    required: true
+    description: |
+      Must name both interrupt sources "rx" and "tx", in the order they
+      appear in interrupts.
+
   pinctrl-0:
     type: phandles
     description: |
       Port pin configuration for RX & TX signals. 
       For example:
-         pinctrl-0 = <&p5_0_uart5_rx &p5_1_uart5_tx>;
+         pinctrl-0 = <&uarta_rx_gpio28 &uarta_tx_gpio29>;
     required: true

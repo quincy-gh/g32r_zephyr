@@ -201,6 +201,15 @@ static uint32_t port_gpio_base(const struct gpio_g32r5_config *config)
 	return 0U;
 }
 
+/*
+ * A pin is supported when it is bonded and implemented on this package,
+ * i.e. its bit is set in the port's valid mask (see G32R5_*_VALID_MASK).
+ */
+static bool gpio_port_pin_is_supported(gpio_port_pins_t port_pin_mask, gpio_pin_t pin)
+{
+	return (port_pin_mask & BIT(pin)) != 0U;
+}
+
 static bool xbar_pin_ok(uint32_t gpio)
 {
 	if (gpio <= XBAR_GPIO_MAX_CNT) {
@@ -476,6 +485,11 @@ static int gpio_g32r5_configure(const struct device *dev,
 		return -EINVAL;
 	}
 
+	/* Hardware has pull-up only. */
+	if ((flags & GPIO_PULL_DOWN) != 0U) {
+		return -ENOTSUP;
+	}
+
 	bit = BIT(pin);
 	input_only = (config->input_only_mask & bit) != 0U;
 	if (output && input_only) {
@@ -507,7 +521,8 @@ static int gpio_g32r5_configure(const struct device *dev,
 
 		ptr = (uint32_t *)(config->ctrl_regs_base + GPDIR_OFFSET);
 		*ptr |= bit;
-	} else if (input && !input_only) {
+	} else if (!input_only) {
+		/* Input or disabled: clear DIR so the pad stops driving. */
 		ptr = (uint32_t *)(config->ctrl_regs_base + GPDIR_OFFSET);
 		*ptr &= ~bit;
 	}

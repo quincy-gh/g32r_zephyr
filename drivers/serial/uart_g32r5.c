@@ -581,16 +581,17 @@ static DEVICE_API(uart, g32r5_uart_driver_api) = {
 };
 
 #ifdef CONFIG_UART_INTERRUPT_DRIVEN
+#define G32R5_UART_IRQ_CONFIG(n, name)                                                           \
+	IRQ_CONNECT(DT_INST_IRQ_BY_NAME(n, name, irq),                                           \
+		    DT_INST_IRQ_BY_NAME(n, name, priority), g32r5_uart_isr,                      \
+		    DEVICE_DT_INST_GET(n), 0);                                                   \
+	irq_enable(DT_INST_IRQ_BY_NAME(n, name, irq));
+
 #define G32R5_UART_IRQ_HANDLER(n)                                                              \
 	static void g32r5_uart_config_func_##n(const struct device *dev)                       \
 	{                                                                                      \
-		/* RX vector from devicetree. TX is the next line. */                         \
-		IRQ_CONNECT(DT_INST_IRQN(n), DT_INST_IRQ(n, priority), g32r5_uart_isr,         \
-			    DEVICE_DT_INST_GET(n), 0);                                         \
-		IRQ_CONNECT(DT_INST_IRQN(n) + 1, DT_INST_IRQ(n, priority), g32r5_uart_isr,     \
-			    DEVICE_DT_INST_GET(n), 0);                                         \
-		irq_enable(DT_INST_IRQN(n));                                                   \
-		irq_enable(DT_INST_IRQN(n) + 1);                                               \
+		G32R5_UART_IRQ_CONFIG(n, rx)                                                   \
+		G32R5_UART_IRQ_CONFIG(n, tx)                                                   \
 	}
 #define G32R5_UART_IRQ_HANDLER_FUNC_INIT(n) .irq_config_func = g32r5_uart_config_func_##n
 #else

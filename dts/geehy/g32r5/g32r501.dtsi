@@ -76,6 +76,11 @@
 		pll: pll {
 			#clock-cells = <0>;
 			compatible = "geehy,g32r5-pll-clock";
+			clocks = <&clk_intosc_1>;
+			imult = <1>;
+			fmult = <0>;
+			odiv = <1>;
+			pllsysclkdiv = <1>;
 			status = "disabled";
 		};
 	};
@@ -128,13 +133,15 @@
 		uarta: uart@50000c00 {
 			compatible = "geehy,g32r5-uart";
 			reg = <0x50000c00 0x400>;
-			interrupts = <96 0>;
+			interrupts = <96 0>, <97 0>;
+			interrupt-names = "rx", "tx";
 			status = "disabled";
 		};
 		uartb: uart@50100000 {
 			compatible = "geehy,g32r5-uart";
 			reg = <0x50100000 0x400>;
-			interrupts = <98 0>;
+			interrupts = <98 0>, <99 0>;
+			interrupt-names = "rx", "tx";
 			status = "disabled";
 		};
 

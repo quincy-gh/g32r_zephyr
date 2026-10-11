@@ -13,3 +13,60 @@ config SYS_CLOCK_HW_CYCLES_PER_SEC
 	default $(dt_node_int_prop_int,/soc/sysclk@40013400,clock-frequency) if SOC_SERIES_G32R502
 
 rsource "*/Kconfig.soc"
+
+menuconfig XCLKOUT
+	bool "XCLKOUT"
+	help
+	  Route an internal clock to the XCLKOUT pad (GPIO16 or GPIO18).
+	  Available on both G32R501 and G32R502.
+
+if XCLKOUT
+
+config XCLKOUT_PIN
+	int "XCLKOUT Pin"
+	default 16
+	help
+		16 GPIO16
+		18 GPIO18
+
+config XCLKOUT_DIV
+	int "XCLKOUTDIV"
+	range 0 3
+	default 3
+	help
+		Selects the div value
+		0: /1
+		1: /2
+		2: /4
+		3: /8
+
+choice XCLKOUT_SRC
+	prompt "XCLKOUT Source"
+	default XCLKOUT_SRC_INTOSC1
+	help
+		XCLKOUTSEL
+
+	config XCLKOUT_SRC_PLLSYSCLK
+		bool "PLLSYSCLK"
+
+	config XCLKOUT_SRC_PLLRAWCLK
+		bool "PLLRAWCLK"
+
+	config XCLKOUT_SRC_SYSCLK
+		bool "SYSCLK"
+
+	config XCLKOUT_SRC_APBCLK
+		bool "APBCLK"
+
+	config XCLKOUT_SRC_INTOSC1
+		bool "INTOSC1"
+
+	config XCLKOUT_SRC_INTOSC2
+		bool "INTOSC2"
+
+	config XCLKOUT_SRC_XTAL
+		bool "XTAL"
+
+endchoice
+
+endif
