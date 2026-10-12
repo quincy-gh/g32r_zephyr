@@ -1,0 +1,19 @@
+tests:
+  g32r5.spi.loopback:
+    tags:
+      - drivers
+      - spi
+    harness: ztest
+    platform_allow:
+      - g32r501_eval/g32r501dvxt/cpu0
+      - g32r502_eval/g32r502mc
+    timeout: 30
+  g32r5.spi.spib:
+    tags:
+      - drivers
+      - spi
+    harness: ztest
+    platform_allow:
+      - g32r501_eval/g32r501dvxt/cpu0
+    extra_args: DTC_OVERLAY_FILE="spib.overlay"
+    timeout: 30

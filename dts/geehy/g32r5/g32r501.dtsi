@@ -145,6 +145,26 @@
 			status = "disabled";
 		};
 
+		spia: spi@50001000 {
+			compatible = "geehy,g32r5-spi";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0x50001000 0x400>;
+			interrupts = <72 0>, <73 0>;
+			interrupt-names = "rx", "tx";
+			status = "disabled";
+		};
+
+		spib: spi@50100400 {
+			compatible = "geehy,g32r5-spi";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0x50100400 0x400>;
+			interrupts = <74 0>, <75 0>;
+			interrupt-names = "rx", "tx";
+			status = "disabled";
+		};
+
 		/*
 		 * CPU timers. Each core image has its own TMR0/1/2 at these
 		 * addresses. TMR0 and TMR1 run from SYSCLK. TMR2 selects its

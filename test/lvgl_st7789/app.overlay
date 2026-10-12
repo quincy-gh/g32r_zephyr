@@ -1,0 +1,73 @@
+/*
+ * Copyright (c) 2026, Quincy.W <wangqyfm@foxmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * ATK-MD0240, 4-wire SPI, table 2.1.1. Same GPIO numbers on both eval
+ * boards. Solder R9, R8 and R6; leave R10, R7 and R5 open.
+ *
+ *   1 VCC3.3  -> 3.3V
+ *   2 LCD_CS  -> GPIO0   active low, software chip-select
+ *   3 LCD_SDA -> GPIO11  SPIA SIMO
+ *   4 LCD_RST -> GPIO17  active low
+ *   5 SLCD_DC -> GPIO13  low = command, high = data
+ *   6 SLCD_SCK-> GPIO12  SPIA CLK
+ *   7 LCD_PWR -> GPIO1   active high backlight
+ *   8 GND     -> GND
+ *
+ * Hardware STE is not muxed. 1 MHz, mode 3. The glass is 240 by 320.
+ * Mode 3 matches the edge this panel samples. Chip-select stays low
+ * across each command and its pixels so the parameters actually latch.
+ * The controller shows primary colors after INVON, which the ST7789
+ * driver sends unless inversion-off is set.
+ */
+
+#include <zephyr/dt-bindings/display/panel.h>
+
+/ {
+	chosen {
+		zephyr,display = &atk_md0240;
+	};
+
+	lcd_pwr: lcd-pwr {
+		compatible = "gpio-leds";
+
+		backlight: backlight {
+			gpios = <&gpioa 1 GPIO_ACTIVE_HIGH>;
+		};
+	};
+
+	mipi_dbi_atk: mipi_dbi_atk_md0240 {
+		compatible = "zephyr,mipi-dbi-spi";
+		spi-dev = <&spia>;
+		dc-gpios = <&gpioa 13 GPIO_ACTIVE_HIGH>;
+		reset-gpios = <&gpioa 17 GPIO_ACTIVE_LOW>;
+		write-only;
+		#address-cells = <1>;
+		#size-cells = <0>;
+
+		atk_md0240: st7789v@0 {
+			compatible = "sitronix,st7789v";
+			reg = <0>;
+			mipi-max-frequency = <1000000>;
+			mipi-cpol;
+			mipi-cpha;
+			mipi-hold-cs;
+			mipi-mode = "MIPI_DBI_MODE_SPI_4WIRE";
+			width = <240>;
+			height = <320>;
+			x-offset = <0>;
+			y-offset = <0>;
+			mdac = <0x00>;
+			pixel-format = <PANEL_PIXEL_FORMAT_RGB_565X>;
+			ready-time-ms = <120>;
+		};
+	};
+};
+
+&spia {
+	status = "okay";
+	cs-gpios = <&gpioa 0 GPIO_ACTIVE_LOW>;
+	pinctrl-0 = <&spia_simo_gpio11 &spia_clk_gpio12>;
+	pinctrl-names = "default";
+};

@@ -1,0 +1,20 @@
+/*
+ * Copyright (c) 2026, Quincy.W <wangqyfm@foxmail.com>
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ *
+ * SPIA on the expansion-header pins that both eval boards wire straight
+ * to the MCU. GPIO2/GPIO3 on the 501 board are the CAN transceiver
+ * through S5, and GPIO8/9/10 on the 501 board are the QSPI socket.
+ * STE is pulled up so a floating chip-select does not clock the slave.
+ */
+
+&spia_ste_gpio0 {
+	bias-pull-up;
+};
+
+&spia {
+	status = "okay";
+	pinctrl-0 = <&spia_somi_gpio1 &spia_simo_gpio11 &spia_clk_gpio12 &spia_ste_gpio0>;
+	pinctrl-names = "default";
+};

@@ -1,0 +1,36 @@
+# Copyright (c) 2026, Quincy.W <wangqyfm@foxmail.com>
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  Geehy G32R5 SPI controller.
+
+  The baud clock is LSPCLK. A transfer is legal only when the requested
+  frequency is at most LSPCLK/4 and at least LSPCLK/128. Character
+  length is 1 to 16 bits. Transmit data is left-justified in the 16-bit
+  FIFO word. SPI_MODE_LOOP enables the internal SIMO-to-SOMI loopback,
+  which is valid only while the controller is master.
+
+compatible: "geehy,g32r5-spi"
+
+include: [spi-controller.yaml, pinctrl-device.yaml]
+
+properties:
+  reg:
+    required: true
+
+  interrupts:
+    required: true
+
+  interrupt-names:
+    type: string-array
+    required: true
+    description: |
+      Must name both interrupt sources "rx" and "tx", in the order they
+      appear in interrupts. The polling driver does not enable them.
+
+  pinctrl-0:
+    type: phandles
+    description: |
+      Pin configuration for CLK, SIMO and SOMI. STE is optional and is
+      not used as a chip select; use cs-gpios for GPIO chip select.
+      Omit pinctrl when the only user is internal loopback.

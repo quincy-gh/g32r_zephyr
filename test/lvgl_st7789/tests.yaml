@@ -1,0 +1,13 @@
+# ATK-MD0240 on one eval board. Disconnect the 501/502 link wires first.
+tests:
+  g32r5.display.lvgl.st7789:
+    tags:
+      - display
+      - spi
+      - lvgl
+      - hardware
+    harness: none
+    platform_allow:
+      - g32r501_eval/g32r501dvxt/cpu0
+      - g32r502_eval/g32r502mc
+    timeout: 60

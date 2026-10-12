@@ -1,0 +1,13 @@
+# Two-board test. Flash this app to both eval boards and wire the pins
+# listed in src/main.c before expecting a pass. A single board times out.
+tests:
+  g32r5.spi.link:
+    tags:
+      - drivers
+      - spi
+      - hardware
+    harness: ztest
+    platform_allow:
+      - g32r501_eval/g32r501dvxt/cpu0
+      - g32r502_eval/g32r502mc
+    timeout: 120

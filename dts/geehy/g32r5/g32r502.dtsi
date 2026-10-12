@@ -159,6 +159,16 @@
 			status = "disabled";
 		};
 
+		spia: spi@40001400 {
+			compatible = "geehy,g32r5-spi";
+			#address-cells = <1>;
+			#size-cells = <0>;
+			reg = <0x40001400 0x400>;
+			interrupts = <72 0>, <73 0>;
+			interrupt-names = "rx", "tx";
+			status = "disabled";
+		};
+
 		/*
 		 * CPU timers. TMR0 and TMR1 run from SYSCLK. TMR2 selects its
 		 * clock with clocks and divides it with clock-prescaler.
